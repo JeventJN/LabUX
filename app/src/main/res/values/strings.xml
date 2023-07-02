@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">JalIHara</string>
     <string name="button">This is button</string>
+    <string name="onlyImage">This is just image</string>
 
+    <!--Navbar String-->
+    <string name="home">Home</string>
+    <string name="aboutus">About Us</string>
+    <string name="viewtickets">View Tickets</string>
+    <string name="logout">Logout</string>
+    <string name="contactus">Contact Us</string>
 </resources>
