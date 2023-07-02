@@ -9,4 +9,7 @@
     <string name="viewtickets">View Tickets</string>
     <string name="logout">Logout</string>
     <string name="contactus">Contact Us</string>
+
+<!--    ViewTicket String-->
+    <string name="tickettitle">Get Your Ticket</string>
 </resources>
