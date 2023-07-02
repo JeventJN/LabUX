@@ -12,7 +12,7 @@
         android:theme="@style/Theme.JalIHara"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ViewTicket"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
