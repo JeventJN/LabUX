@@ -2,6 +2,7 @@ package com.example.jalihara;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,7 +23,7 @@ public class ViewTicket extends AppCompatActivity {
         LinearLayout navbar = findViewById(R.id.navbar);
         LinearLayout navbarsub = findViewById(R.id.navbarsub);
         LinearLayout navigationLayout = findViewById(R.id.navigation);
-        LinearLayout ticketcontent = findViewById(R.id.tikcetcontent);
+        ConstraintLayout ticketcontent = findViewById(R.id.tikcetcontent);
         LinearLayout headerbar = findViewById(R.id.headerbar);
         navigationLayout.bringToFront();
         navbar.setVisibility(View.GONE);
@@ -35,6 +36,8 @@ public class ViewTicket extends AppCompatActivity {
                 if (navbar.getVisibility() == View.VISIBLE) {
                     navbar.setVisibility(View.GONE);
                     navbarsub.setVisibility(View.GONE);
+                    ticketcontent.setAlpha(1f);
+                    headerbar.setAlpha(1f);
                 } else {
                     navbar.setVisibility(View.VISIBLE);
                     ticketcontent.setAlpha(0.1f);
