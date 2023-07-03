@@ -3,33 +3,54 @@ package com.example.jalihara;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.content.ContextCompat;
 
-import android.content.Intent;
-import android.graphics.Color;
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.FrameLayout;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 
 import com.google.android.material.navigation.NavigationView;
+import com.example.jalihara.databinding.ViewticketBinding;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ViewTicket extends AppCompatActivity {
+    ViewticketBinding binding;
+    ListAdapter listAdapter;
+    ArrayList<ListTicket> dataArrayList = new ArrayList<>();
+    ListTicket listTicket;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.viewticket);
+        binding = ViewticketBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         LinearLayout navbar = findViewById(R.id.navbar);
         LinearLayout navbarsub = findViewById(R.id.navbarsub);
-        LinearLayout navigationLayout = findViewById(R.id.navigation);
         ConstraintLayout ticketcontent = findViewById(R.id.tikcetcontent);
         LinearLayout headerbar = findViewById(R.id.headerbar);
         navbar.setVisibility(View.GONE);
         navbarsub.setVisibility(View.GONE);
+        //    binding = ActivityMainBinding.inflate(getLayoutInflater());
+//    setContentView(binding.getRoot());
+        String[] artNameList = {"Pasta", "Maggi", "Cake", "Pancake", "Pizza","Burgers", "Fries"};
+        String[] artDateList = {"30 mins", "2 mins", "45 mins","10 mins", "60 mins", "45 mins", "30 mins"};
+        Double[] artPriceList = {Double.valueOf("350000"),Double.valueOf("400000"),Double.valueOf("500000"),Double.valueOf("400000"),Double.valueOf("250000")};
+        int[] artImageList = {R.drawable.ramayana, R.drawable.hamlet, R.drawable.romeojuliet, R.drawable.tempest, R.drawable.artofwar};
+        for (int i = 0; i < artPriceList.length; i++) {
+            listTicket = new ListTicket(artNameList[i], artDateList[i], artPriceList[i], artImageList[i]);
+            dataArrayList.add(listTicket);
+        }
+        listAdapter = new ListAdapter(ViewTicket.this, dataArrayList);
+        binding.artlist.setAdapter(listAdapter);
+        binding.artlist.setClickable(true);
 
         ImageView imagemenu = findViewById(R.id.imagemenu);
         imagemenu.setOnClickListener(new View.OnClickListener() {
