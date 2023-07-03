@@ -3,11 +3,14 @@ package com.example.jalihara;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -25,7 +28,6 @@ public class ViewTicket extends AppCompatActivity {
         LinearLayout navigationLayout = findViewById(R.id.navigation);
         ConstraintLayout ticketcontent = findViewById(R.id.tikcetcontent);
         LinearLayout headerbar = findViewById(R.id.headerbar);
-        navigationLayout.bringToFront();
         navbar.setVisibility(View.GONE);
         navbarsub.setVisibility(View.GONE);
 
@@ -43,6 +45,29 @@ public class ViewTicket extends AppCompatActivity {
                     ticketcontent.setAlpha(0.1f);
                     headerbar.setAlpha(0.1f);
                 }
+            }
+        });
+        ticketcontent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (navbar.getVisibility() == View.VISIBLE) {
+                    navbar.setVisibility(View.GONE);
+                    navbarsub.setVisibility(View.GONE);
+                    ticketcontent.setAlpha(1f);
+                    headerbar.setAlpha(1f);
+                }
+            }
+        });
+        headerbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (navbar.getVisibility() == View.VISIBLE) {
+                    navbar.setVisibility(View.GONE);
+                    navbarsub.setVisibility(View.GONE);
+                    ticketcontent.setAlpha(1f);
+                    headerbar.setAlpha(1f);
+                }
+//                ticketcontent.performClick(); ini kehitung klik 2x, klik headerbar terus klik ticketcontent
             }
         });
 
