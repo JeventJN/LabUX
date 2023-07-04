@@ -4,83 +4,83 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/black"
+        android:orientation="vertical"
+        android:gravity="center">
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:backgroundTint="@color/black"
-            android:orientation="vertical"
-            android:gravity="center">
-            <LinearLayout
-                android:layout_width="380dp"
-                android:layout_height="150dp"
-                android:gravity="center"
-                android:background="@drawable/ticketcatrounded"
-                android:layout_marginVertical="6dp">
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="378dp"
-                    android:layout_height="148dp"
-                    android:background="@drawable/ticketcatrounded">
+            android:layout_width="380dp"
+            android:layout_height="150dp"
+            android:gravity="center"
+            android:background="@drawable/ticketcatrounded"
+            android:layout_marginVertical="6dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="378dp"
+                android:layout_height="148dp"
+                android:background="@drawable/ticketcatrounded">
 
-                    <androidx.cardview.widget.CardView
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/artimage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:cardCornerRadius="20dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
+                        android:background="@drawable/ticketcatrounded"
+                        android:scaleX="2.0"
+                        android:scaleY="2.0"
+                        android:src="@drawable/romeojuliet" />
+                </androidx.cardview.widget.CardView>
 
-                        <ImageView
-                            android:id="@+id/artimage"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/ticketcatrounded"
-                            android:scaleX="2.0"
-                            android:scaleY="2.0"
-                            android:src="@drawable/romeojuliet" />
-                    </androidx.cardview.widget.CardView>
+                <TextView
+                    android:id="@+id/artname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:elevation="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:id="@+id/artname"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:elevation="10dp"
-                        android:textColor="@color/white"
-                        android:textSize="30sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/artdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:elevation="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.976"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.053" />
 
-                    <TextView
-                        android:id="@+id/artdate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:elevation="10dp"
-                        android:textColor="@color/white"
-                        android:textSize="15sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.976"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.053" />
+                <TextView
+                    android:id="@+id/artprice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:elevation="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.023"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.953" />
 
-                    <TextView
-                        android:id="@+id/artprice"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:elevation="10dp"
-                        android:textColor="@color/white"
-                        android:textSize="15sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.023"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.953" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
+    </LinearLayout>
 </FrameLayout>
