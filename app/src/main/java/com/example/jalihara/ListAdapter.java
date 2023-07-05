@@ -13,14 +13,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 public class ListAdapter extends ArrayAdapter<ListTicket> {
     public ListAdapter(@NonNull Context context, ArrayList<ListTicket> dataArrayList) {
-        super(context, R.layout.listart, dataArrayList);
+        super(context, R.layout.templatelist, dataArrayList);
     }
     @NonNull
     @Override
     public View getView(int position, @Nullable View view, @NonNull ViewGroup parent) {
         ListTicket listData = getItem(position);
         if (view == null){
-            view = LayoutInflater.from(getContext()).inflate(R.layout.listart, parent, false);
+            view = LayoutInflater.from(getContext()).inflate(R.layout.templatelist, parent, false);
         }
         TextView listName = view.findViewById(R.id.artname);
         TextView listDate = view.findViewById(R.id.artdate);

@@ -6,6 +6,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -41,7 +42,7 @@ public class ViewTicket extends AppCompatActivity {
         //    binding = ActivityMainBinding.inflate(getLayoutInflater());
 //    setContentView(binding.getRoot());
         String[] artNameList = {"Pasta", "Maggi", "Cake", "Pancake", "Pizza","Burgers", "Fries"};
-        String[] artDateList = {"30 mins", "2 mins", "45 mins","10 mins", "60 mins", "45 mins", "30 mins"};
+        String[] artDateList = {"21 Jun 2023", "12 Mar 2023", "05 Sep 2023", "28 Dec 2023", "17 Aug 2023"};
         Double[] artPriceList = {Double.valueOf("350000"),Double.valueOf("400000"),Double.valueOf("500000"),Double.valueOf("400000"),Double.valueOf("250000")};
         int[] artImageList = {R.drawable.ramayana, R.drawable.hamlet, R.drawable.romeojuliet, R.drawable.tempest, R.drawable.artofwar};
         for (int i = 0; i < artPriceList.length; i++) {
@@ -101,6 +102,8 @@ public class ViewTicket extends AppCompatActivity {
                 if (itemId == R.id.home) {
                     // Handle Home click
                     // Perform the desired action or navigate to the Home screen/activity
+                    Intent intent = new Intent(ViewTicket.this, Home.class);
+                    startActivity(intent);
                     return true;
                 } else if (itemId == R.id.aboutus) {
                     if (navbarsub.getVisibility() == View.VISIBLE) {

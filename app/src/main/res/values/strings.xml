@@ -3,6 +3,12 @@
     <string name="button">This is button</string>
     <string name="onlyImage">This is just image</string>
 
+    <!--Login-->
+    <string name="app_desc">Your reliable ticket application</string>
+    <string name="username_hint">Input username here</string>
+    <string name="password_hint">Input password here</string>
+    <string name="error_message">Error Message</string>
+
     <!--Navbar String-->
     <string name="home">Home</string>
     <string name="aboutus">About Us</string>

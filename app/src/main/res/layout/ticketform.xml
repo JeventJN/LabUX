@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:elevation="10dp">-->
+<!--        <include-->
+<!--            layout="@layout/navigationheader"/>-->
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <FrameLayout
+        android:layout_marginTop="77dp"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:backgroundTint="@color/purple_200">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleY="2.0"
+            android:scaleX="2.0"
+            android:src="@drawable/romeojuliet"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="adwadwa"/>
+    </FrameLayout>
+</FrameLayout>

@@ -77,7 +77,7 @@
                     android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:layout_marginRight="5dp"
-                    android:backgroundTint="@drawable/ticketcathover"
+                    android:backgroundTint="@color/orange"
                     android:text="@string/art"
                     android:textColor="@color/black"
                     android:textSize="15sp"/>
@@ -112,21 +112,41 @@
                     android:textSize="15sp" />
             </LinearLayout>
         </HorizontalScrollView>
+
         <LinearLayout
             android:layout_width="380dp"
-            android:layout_height="580dp"
+            android:layout_height="470dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.516"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
             app:layout_constraintVertical_bias="0.136">
+
             <ListView
                 android:id="@+id/artlist"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                tools:listitem="@layout/listart"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="20dp"
+                tools:listitem="@layout/templatelist" />
+<!--                <ListView-->
+<!--                    android:id="@+id/movielist"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    tools:listitem="@layout/templatelist"-->
+<!--                    android:layout_marginTop="20dp"/>-->
+<!--                <ListView-->
+<!--                    android:id="@+id/anmlist"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    tools:listitem="@layout/templatelist"-->
+<!--                    android:layout_marginTop="20dp"/>-->
+<!--                <ListView-->
+<!--                    android:id="@+id/otherlist"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    tools:listitem="@layout/templatelist"-->
+<!--                    android:layout_marginTop="20dp"/>-->
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
