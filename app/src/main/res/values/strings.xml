@@ -2,6 +2,10 @@
     <string name="app_name">JalIHara</string>
     <string name="button">This is button</string>
     <string name="onlyImage">This is just image</string>
+    <string name="onlyTextInput">This is just text input</string>
+    <string name="onlyText">This is just text</string>
+
+
 
     <!--Login-->
     <string name="app_desc">Your reliable ticket application</string>
@@ -22,6 +26,12 @@
     <string name="music">Music</string>
     <string name="anm">A$M</string>
     <string name="other">Other</string>
+
+<!--    TicketForm String-->
+    <string name="radio1">VIP</string>
+    <string name="radio2">Regular</string>
+    <string name="customername">Input your name here</string>
+    <string name="ticketcount">Input ticket quantity here</string>
 
 
 </resources>

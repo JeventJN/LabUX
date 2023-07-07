@@ -14,4 +14,5 @@
     <color name="orange">#FE7145</color>
     <color name="gray">#999999</color>
     <color name="errormessage">#EB513D</color>
+    <color name="olderorange">#FF6231</color>
 </resources>

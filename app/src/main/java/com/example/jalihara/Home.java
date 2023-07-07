@@ -2,29 +2,25 @@ package com.example.jalihara;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
-
 import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 
-import com.denzcoskun.imageslider.ImageSlider;
-import com.denzcoskun.imageslider.interfaces.ItemClickListener;
-import com.denzcoskun.imageslider.models.SlideModel;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Home extends AppCompatActivity {
     private ViewPager2 viewPager;
@@ -34,12 +30,11 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
-
         ImageView hand = findViewById(R.id.hand);
         LinearLayout welcome = findViewById(R.id.welcome);
         ValueAnimator rotationAnimator = ValueAnimator.ofFloat(0f, -30f, 0f);
         rotationAnimator.setRepeatCount(ValueAnimator.INFINITE);
-        rotationAnimator.setDuration(1000); // Adjust the duration as needed
+        rotationAnimator.setDuration(1000);
 
         rotationAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -86,39 +81,58 @@ public class Home extends AppCompatActivity {
         viewPager = findViewById(R.id.viewPager);
 
         imageList = new ArrayList<>();
-        imageList.add(R.drawable.ramayana);
-        imageList.add(R.drawable.romeojuliet);
-        imageList.add(R.drawable.hamlet);
+        imageList.add(R.drawable.banner1);
+        imageList.add(R.drawable.banner2);
+        imageList.add(R.drawable.banner3);
 
-        CarouselAdapter imageAdapter = new CarouselAdapter(imageList);
+        CarouselAdapter imageAdapter = new CarouselAdapter(this, imageList);
         viewPager.setAdapter(imageAdapter);
         viewPager.setCurrentItem(0, false);
 
-//        Versi pakai github
-        ImageSlider carousel = findViewById(R.id.carousel);
-        List<SlideModel> slideModels=new ArrayList<>();
-        slideModels.add(new SlideModel(R.drawable.banner1));
-        slideModels.add(new SlideModel(R.drawable.banner2));
-        slideModels.add(new SlideModel(R.drawable.banner3));
-        carousel.setImageList(slideModels, true);
+        final int NUM_PAGES = imageList.size();
+        final long DELAY_MS = 3000;
+        final long PERIOD_MS = 5000;
 
-//        carousel.setItemClickListener(new ItemClickListener() {
-//            @Override
-//            public void onItemSelected(int position) {
-//                // Handle click event for the selected item in slideModels
-//                Intent intent = new Intent(Home.this, ViewTicket.class);
-//                startActivity(intent);
-//            }
-//        });
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            private int currentPage = 0;
+
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        viewPager.setCurrentItem(currentPage, true);
+                        currentPage++;
+                        if (currentPage == NUM_PAGES) {
+                            currentPage = 0;
+                        }
+                    }
+                });
+            }
+        }, DELAY_MS, PERIOD_MS);
+//        Versi pakai github
+//        ImageSlider carousel = findViewById(R.id.carousel);
+//        List<SlideModel> slideModels=new ArrayList<>();
+//        slideModels.add(new SlideModel(R.drawable.banner1));
+//        slideModels.add(new SlideModel(R.drawable.banner2));
+//        slideModels.add(new SlideModel(R.drawable.banner3));
 //        carousel.setImageList(slideModels, true);
 
         LinearLayout navbar = findViewById(R.id.navbar);
         LinearLayout navbarsub = findViewById(R.id.navbarsub);
-        LinearLayout homecontent = findViewById(R.id.homecontent);
+        LinearLayout homebanner = findViewById(R.id.homebanner);
+        ScrollView homecontent = findViewById(R.id.homecontent);
         LinearLayout headerbar = findViewById(R.id.headerbar);
         navbar.setVisibility(View.GONE);
         navbarsub.setVisibility(View.GONE);
-
+        homebanner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, ViewTicket.class);
+                startActivity(intent);
+            }
+        });
         ImageView imagemenu = findViewById(R.id.imagemenu);
         imagemenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -166,8 +180,8 @@ public class Home extends AppCompatActivity {
                 int itemId = item.getItemId();
 
                 if (itemId == R.id.home) {
-                    // Handle Home click
-                    // Perform the desired action or navigate to the Home screen/activity
+                    Intent intent = new Intent(Home.this, Home.class);
+                    startActivity(intent);
                     return true;
                 } else if (itemId == R.id.aboutus) {
                     if (navbarsub.getVisibility() == View.VISIBLE) {
@@ -177,22 +191,16 @@ public class Home extends AppCompatActivity {
                     }
                     return true;
                 } else if (itemId == R.id.aboutus1) {
-                    // Handle About Us 1 click
-                    // Perform the desired action or navigate to the About Us 1 screen/activity
                     return true;
                 } else if (itemId == R.id.aboutus2) {
-                    // Handle About Us 2 click
-                    // Perform the desired action or navigate to the About Us 2 screen/activity
                     return true;
                 } else if (itemId == R.id.ticket) {
-                    // Handle View Tickets click
-                    // Start the ViewTicketsActivity to display the viewticket.xml layout
                     Intent intent = new Intent(Home.this, ViewTicket.class);
                     startActivity(intent);
                     return true;
                 } else if (itemId == R.id.logout) {
-                    // Handle Logout click
-                    // Perform the desired action or navigate to the Logout screen/activity
+                    Intent intent = new Intent(Home.this, TicketForm.class);
+                    startActivity(intent);
                     return true;
                 }
 
