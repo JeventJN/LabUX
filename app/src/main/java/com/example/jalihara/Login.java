@@ -57,10 +57,11 @@ public class Login extends AppCompatActivity {
 
                 if (isUsernameValid && isPasswordValid) {
                     Intent intent = new Intent(Login.this, Home.class);
+                    intent.putExtra("username", username);
+                    intent.putExtra("password", password);
                     startActivity(intent);
                 }
             }
         });
-        // TODO: Passing username and password value to other java
     }
 }

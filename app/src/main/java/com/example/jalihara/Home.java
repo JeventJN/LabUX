@@ -14,6 +14,7 @@ import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -35,6 +36,12 @@ public class Home extends AppCompatActivity {
         ValueAnimator rotationAnimator = ValueAnimator.ofFloat(0f, -30f, 0f);
         rotationAnimator.setRepeatCount(ValueAnimator.INFINITE);
         rotationAnimator.setDuration(1000);
+        Intent intent = getIntent();
+        String username = intent.getStringExtra("username");
+
+        TextView welcomeTextView = findViewById(R.id.welcomeuser);
+        String welcomeMessage = "Welcome, " + username + "!";
+        welcomeTextView.setText(welcomeMessage);
 
         rotationAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override

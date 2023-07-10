@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import com.google.android.material.navigation.NavigationView;
@@ -43,6 +44,18 @@ public class ViewTicket extends AppCompatActivity {
         listAdapter = new ListAdapter(ViewTicket.this, dataArrayList);
         binding.artlist.setAdapter(listAdapter);
         binding.artlist.setClickable(true);
+
+        binding.artlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(ViewTicket.this, TicketForm.class);
+                intent.putExtra("passimage", artImageList[i]);
+                intent.putExtra("passimage", artImageList[i]);
+                intent.putExtra("passname", artNameList[i]);
+                intent.putExtra("passprice", artPriceList[i]);
+                startActivity(intent);
+            }
+        });
 
         ImageView imagemenu = findViewById(R.id.imagemenu);
         imagemenu.setOnClickListener(new View.OnClickListener() {
@@ -91,8 +104,6 @@ public class ViewTicket extends AppCompatActivity {
                 int itemId = item.getItemId();
 
                 if (itemId == R.id.home) {
-                    // Handle Home click
-                    // Perform the desired action or navigate to the Home screen/activity
                     Intent intent = new Intent(ViewTicket.this, Home.class);
                     startActivity(intent);
                     return true;
@@ -112,14 +123,12 @@ public class ViewTicket extends AppCompatActivity {
                     // Perform the desired action or navigate to the About Us 2 screen/activity
                     return true;
                 } else if (itemId == R.id.ticket) {
-                    // Handle View Tickets click
-                    // Start the ViewTicketsActivity to display the viewticket.xml layout
-//                    Intent intent = new Intent(ViewTickets.this, MainActivity.class);
-//                    startActivity(intent);
+                    Intent intent = new Intent(ViewTicket.this, ViewTicket.class);
+                    startActivity(intent);
                     return true;
                 } else if (itemId == R.id.logout) {
-                    // Handle Logout click
-                    // Perform the desired action or navigate to the Logout screen/activity
+                    Intent intent = new Intent(ViewTicket.this, Login.class);
+                    startActivity(intent);
                     return true;
                 }
 
