@@ -249,8 +249,12 @@ public class Home extends AppCompatActivity {
                     }
                     return true;
                 } else if (itemId == R.id.aboutus1) {
+                    Intent intent = new Intent(Home.this, MainAUCU.class);
+                    startActivity(intent);
                     return true;
                 } else if (itemId == R.id.aboutus2) {
+                    Intent intent = new Intent(Home.this, MainAUCU.class);
+                    startActivity(intent);
                     return true;
                 } else if (itemId == R.id.ticket) {
                     Intent intent = new Intent(Home.this, ViewTicket.class);

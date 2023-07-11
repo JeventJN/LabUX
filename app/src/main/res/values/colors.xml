@@ -15,4 +15,15 @@
     <color name="gray">#999999</color>
     <color name="errormessage">#EB513D</color>
     <color name="olderorange">#FF6231</color>
+    <color name="dark_navy">#1B2339</color>
+    <color name="navy">#2A3757</color>
+    <color name="tosca">#25B599</color>
+    <color name="blue">#51ABD7</color>
+    <color name="sky_blue">#92B2FD</color>
+    <color name="light_blue">#CCD0F6</color>
+    <color name="purple">#9731F2</color>
+    <color name="light_purple">#AD7FFB</color>
+    <color name="pink">#F594B7</color>
+    <color name="light_grey">#EAEBEF</color>
+    <color name="darkest_navy">#131A2A</color>
 </resources>

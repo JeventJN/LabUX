@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_navy"
+    tools:context=".AboutUsFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dark_navy">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@color/dark_navy"
+            tools:context=".AboutUs">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Welcome to JalIhara!"
+                    android:textSize="30sp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="20dp"
+                    android:paddingLeft="25dp" />
+            </LinearLayout>
+
+            <ViewFlipper
+                android:layout_width="310dp"
+                android:layout_height="200dp"
+                android:autoStart="true"
+                android:flipInterval="3500"
+                android:inAnimation="@anim/animation1"
+                android:outAnimation="@anim/animation2"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="30dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    app:cardBackgroundColor="@color/dark_navy"
+                    app:cardElevation="20dp"
+                    app:cardCornerRadius="20dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:src="@drawable/_binus"
+                        android:scaleType="fitXY"/>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    app:cardBackgroundColor="@color/dark_navy"
+                    app:cardElevation="20dp"
+                    app:cardCornerRadius="20dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:src="@drawable/_binus2"
+                        android:scaleType="fitXY"/>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    app:cardBackgroundColor="@color/dark_navy"
+                    app:cardElevation="20dp"
+                    app:cardCornerRadius="20dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:src="@drawable/_binus3"
+                        android:scaleType="fitXY"/>
+                </androidx.cardview.widget.CardView>
+            </ViewFlipper>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:background="@drawable/border_description_founder"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="What is JalIhara?"
+                        android:textSize="25sp"
+                        android:paddingLeft="10dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/description"
+                        android:textSize="15sp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:justificationMode="inter_word" />
+                </TableLayout>
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:background="@drawable/border_vision_mission"
+                    android:padding="20dp"
+                    android:layout_marginTop="170dp">
+
+                    <RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/OurVision"
+                            android:text="Our Vision"
+                            android:textSize="25sp"
+                            android:textColor="@color/white"
+                            android:layout_marginLeft="14dp"
+                            android:background="@color/dark_navy"
+                            android:translationZ="90dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/vision"
+                            android:textColor="@color/white"
+                            android:textSize="15sp"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:paddingTop="18dp"
+                            android:paddingBottom="16dp"
+                            android:layout_marginTop="18dp"
+                            android:justificationMode="inter_word"
+                            android:background="@drawable/border_inside_vision_mission" />
+                    </RelativeLayout>
+
+                </TableLayout>
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="230dp"
+                    android:background="@drawable/border_vision_mission"
+                    android:padding="20dp"
+                    android:layout_marginTop="335dp">
+
+                    <RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/OurMission"
+                            android:text="Our Mission"
+                            android:textSize="25sp"
+                            android:textColor="@color/white"
+                            android:layout_marginLeft="14dp"
+                            android:background="@color/dark_navy"
+                            android:translationZ="90dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:text="@string/mission"
+                            android:textColor="@color/white"
+                            android:textSize="15sp"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:paddingTop="18dp"
+                            android:paddingBottom="16dp"
+                            android:layout_marginTop="18dp"
+                            android:justificationMode="inter_word"
+                            android:background="@drawable/border_inside_vision_mission"/>
+                    </RelativeLayout>
+
+                </TableLayout>
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="600dp"
+                    android:background="@drawable/border_description_founder"
+                    android:padding="20dp"
+                    android:layout_marginTop="575dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Our Founder"
+                        android:textSize="25sp"
+                        android:paddingLeft="10dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:layout_marginTop="20dp">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/_joseph"
+                            android:background="@drawable/border_radius_founder"
+                            android:clipToOutline="true"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Joseph Gonzales"
+                                android:textSize="22sp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Founder &amp; Executive Director"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:layout_marginTop="20dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Reyes Hernandez"
+                                android:textSize="22sp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Co-Founder &amp; Managin Director"/>
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/_reyes"
+                            android:background="@drawable/border_radius_founder"
+                            android:clipToOutline="true" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:layout_marginTop="20dp">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/_sarah"
+                            android:background="@drawable/border_radius_founder"
+                            android:clipToOutline="true"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sarah Ferrero"
+                                android:textSize="22sp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Executive Manager"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:layout_marginTop="20dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Christina Burton"
+                                android:textSize="22sp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Chief Technology Officer"/>
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/_christina"
+                            android:background="@drawable/border_radius_founder"
+                            android:clipToOutline="true" />
+
+                    </LinearLayout>
+
+                </TableLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

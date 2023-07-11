@@ -41,4 +41,12 @@
     <string name="quantityerror2">Quantity must be more than 0</string>
     <string name="quantityerror3">Please enter a valid input</string>
 
+    <!--About Us Contact Us String-->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="description">JalIhara is the go-to mobile app for art enthusiasts. Easily discover, select, and purchase tickets for captivating live performances. Our technology enhances art\'s accessibility and inclusivity, bringing it closer to hearts and minds worldwide.</string>
+    <string name="vision">JalIhara\'s vision is to be the global leader in art ticketing, enabling easy access to diverse art performances. We foster a love for the arts, connecting artists and audiences, and contribute to the global growth and appreciation of art.</string>
+    <string name="mission">Our mission at JalIhara is to revolutionize art ticketing, providing an immersive platform for easy access and purchase. We prioritize user experience, offering personalized recommendations, secure transactions, and timely event reminders. Our goal is to enrich lives by connecting users to the transformative power of art effortlessly.</string>
+    <string name="informations">For more infomations about buying tickets to your favorite art performances with JalIhara, visit</string>
+    <string name="address">Jl. Pakuan No. 3, Sumur Batu, Kec. Babakan Madang, Kabupaten Bogor, Jawa Barat 16810</string>
+
 </resources>
