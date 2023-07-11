@@ -31,7 +31,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/artimage"
+                        android:id="@+id/imageticket"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/ticketcatrounded"
@@ -41,7 +41,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <TextView
-                    android:id="@+id/artname"
+                    android:id="@+id/nameticket"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:elevation="10dp"
@@ -53,7 +53,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/artdate"
+                    android:id="@+id/dateticket"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:elevation="10dp"
@@ -67,7 +67,7 @@
                     app:layout_constraintVertical_bias="0.053" />
 
                 <TextView
-                    android:id="@+id/artprice"
+                    android:id="@+id/priceticket"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:elevation="10dp"
@@ -80,6 +80,19 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.953" />
 
+<!--                <Button-->
+<!--                    android:id="@+id/buttonbuy"-->
+<!--                    android:layout_width="70dp"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintHorizontal_bias="0.967"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:layout_constraintVertical_bias="0.938"-->
+<!--                    android:backgroundTint="@drawable/ticketcathover"-->
+<!--                    android:text="Buy"-->
+<!--                    android:textColor="@color/black"/>-->
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </LinearLayout>

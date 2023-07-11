@@ -2,6 +2,8 @@ package com.example.jalihara;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -20,8 +22,25 @@ import com.google.android.material.navigation.NavigationView;
 public class TicketForm extends AppCompatActivity {
     TicketformBinding binding;
 
+    private Dialog dialog;
+
+    private void showDialog() {
+        dialog = new Dialog(this);
+        dialog.setContentView(R.layout.ticketdialog);
+        dialog.setCancelable(false);
+        dialog.show();
+    }
+
+//    private void dismissDialog() {
+//        if (dialog.isShowing()) {
+//            public void
+//            dialog.dismiss();
+//        }
+//    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
         binding = TicketformBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -93,6 +112,7 @@ public class TicketForm extends AppCompatActivity {
 //                ticketcontent.performClick(); ini kehitung klik 2x, klik headerbar terus klik ticketcontent
             }
         });
+
         buttonbuy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -145,9 +165,17 @@ public class TicketForm extends AppCompatActivity {
                 }
 
                 if (isNameValid && isQuantityValid && isBoothValid) {
+                    showDialog();
                 }
             }
         });
+
+//        @Override
+//        protected void onPause() {
+//            super.onPause();
+//            dismissDialog();
+//        }
+
         NavigationView navigationShow = findViewById(R.id.navigationShow);
         navigationShow.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override

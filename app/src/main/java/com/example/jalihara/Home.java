@@ -11,11 +11,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.example.jalihara.databinding.HomeBinding;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -26,11 +29,16 @@ import java.util.TimerTask;
 public class Home extends AppCompatActivity {
     private ViewPager2 viewPager;
     private List<Integer> imageList;
+    ArrayList<ListTicket> dataArrayListPopular = new ArrayList<>();
+    ListTicket listTicketPopular;
+    ListAdapterPopular listAdapterPopular;
+    HomeBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home);
+        HomeBinding binding = HomeBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         ImageView hand = findViewById(R.id.hand);
         LinearLayout welcome = findViewById(R.id.welcome);
         ValueAnimator rotationAnimator = ValueAnimator.ofFloat(0f, -30f, 0f);
@@ -43,6 +51,17 @@ public class Home extends AppCompatActivity {
         String welcomeMessage = "Welcome, " + username + "!";
         welcomeTextView.setText(welcomeMessage);
 
+        String[] PopularNameList = {"ADWADAD", "Hamlet", "Romeo & Juliet", "The Tempest", "The Art of War"};
+        String[] PopularDateList = {"21 Jun 2023", "12 Mar 2023", "05 Sep 2023", "28 Dec 2023", "17 Aug 2023"};
+        Double[] PopularPriceList = {Double.valueOf("350000"),Double.valueOf("400000"),Double.valueOf("500000"),Double.valueOf("400000"),Double.valueOf("250000")};
+        int[] PopularImageList = {R.drawable.ramayana, R.drawable.hamlet, R.drawable.romeojuliet, R.drawable.tempest, R.drawable.artofwar};
+        for (int i = 0; i < PopularPriceList.length; i++) {
+            listTicketPopular = new ListTicket(PopularNameList[i], PopularDateList[i], PopularPriceList[i], PopularImageList[i]);
+            dataArrayListPopular.add(listTicketPopular);
+        }
+        listAdapterPopular = new ListAdapterPopular(Home.this, dataArrayListPopular);
+        binding.horizontalpopularitem.setAdapter(listAdapterPopular);
+        binding.horizontalpopularitem.setClickable(true);
         rotationAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
@@ -50,6 +69,19 @@ public class Home extends AppCompatActivity {
                 hand.setRotation(rotation);
             }
         });
+
+        binding.horizontalpopularitem.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(Home.this, TicketForm.class);
+                intent.putExtra("passimage", PopularImageList[i]);
+                intent.putExtra("passimage", PopularImageList[i]);
+                intent.putExtra("passname", PopularNameList[i]);
+                intent.putExtra("passprice", PopularPriceList[i]);
+                startActivity(intent);
+            }
+        });
+
 
         rotationAnimator.start();
 
@@ -130,9 +162,28 @@ public class Home extends AppCompatActivity {
         LinearLayout navbarsub = findViewById(R.id.navbarsub);
         LinearLayout homebanner = findViewById(R.id.homebanner);
         ScrollView homecontent = findViewById(R.id.homecontent);
+        ListView horizontalpopularitem = findViewById(R.id.horizontalpopularitem);
         LinearLayout headerbar = findViewById(R.id.headerbar);
         navbar.setVisibility(View.GONE);
         navbarsub.setVisibility(View.GONE);
+
+        horizontalpopularitem.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        // Disable scrolling of the ScrollView when the cursor enters the ListView
+                        homecontent.requestDisallowInterceptTouchEvent(true);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                    case MotionEvent.ACTION_CANCEL:
+                        // Re-enable scrolling of the ScrollView when the cursor leaves the ListView
+                        homecontent.requestDisallowInterceptTouchEvent(false);
+                        break;
+                }
+                return false;
+            }
+        });
         homebanner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -206,7 +257,7 @@ public class Home extends AppCompatActivity {
                     startActivity(intent);
                     return true;
                 } else if (itemId == R.id.logout) {
-                    Intent intent = new Intent(Home.this, TicketForm.class);
+                    Intent intent = new Intent(Home.this, Login.class);
                     startActivity(intent);
                     return true;
                 }

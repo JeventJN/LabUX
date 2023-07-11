@@ -32,6 +32,18 @@
             android:name=".TicketForm"
             android:exported="false">
         </activity>
+        <activity
+            android:name=".ViewTicketMusic"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".ViewTicketAM"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".ViewTicketOther"
+            android:exported="false">
+        </activity>
     </application>
 
 </manifest>

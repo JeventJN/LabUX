@@ -74,16 +74,17 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/AMArt"
                     android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:layout_marginRight="5dp"
-                    android:backgroundTint="@color/orange"
+                    android:backgroundTint="@drawable/ticketcathover"
                     android:text="@string/art"
                     android:textColor="@color/black"
                     android:textSize="15sp"/>
 
                 <Button
-                    android:id="@+id/ArtMusic"
+                    android:id="@+id/AMMusic"
                     android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:layout_marginHorizontal="5dp"
@@ -93,17 +94,16 @@
                     android:textSize="15sp"/>
 
                 <Button
-                    android:id="@+id/ArtAM"
                     android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:layout_marginHorizontal="5dp"
-                    android:backgroundTint="@drawable/ticketcathover"
+                    android:backgroundTint="@color/orange"
                     android:text="@string/anm"
                     android:textColor="@color/black"
                     android:textSize="15sp"/>
 
                 <Button
-                    android:id="@+id/ArtOther"
+                    android:id="@+id/AMOther"
                     android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:layout_marginLeft="5dp"
@@ -127,7 +127,7 @@
 
             <ListView
                 android:layout_marginLeft="5dp"
-                android:id="@+id/artlist"
+                android:id="@+id/amlist"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginTop="20dp"

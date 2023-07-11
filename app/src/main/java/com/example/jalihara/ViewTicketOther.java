@@ -11,12 +11,14 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import com.example.jalihara.databinding.ViewticketotherBinding;
 import com.google.android.material.navigation.NavigationView;
 import com.example.jalihara.databinding.ViewticketBinding;
 import java.util.ArrayList;
 
-public class ViewTicket extends AppCompatActivity {
-    ViewticketBinding binding;
+public class ViewTicketOther extends AppCompatActivity {
+    ViewticketotherBinding binding;
     ListAdapter listAdapter;
     ArrayList<ListTicket> dataArrayList = new ArrayList<>();
     ListTicket listTicket;
@@ -25,7 +27,7 @@ public class ViewTicket extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
-        binding = ViewticketBinding.inflate(getLayoutInflater());
+        binding = ViewticketotherBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         LinearLayout navbar = findViewById(R.id.navbar);
         LinearLayout navbarsub = findViewById(R.id.navbarsub);
@@ -34,25 +36,25 @@ public class ViewTicket extends AppCompatActivity {
         navbar.setVisibility(View.GONE);
         navbarsub.setVisibility(View.GONE);
 
-        String[] artNameList = {"Ramayana", "Hamlet", "Romeo & Juliet", "The Tempest", "The Art of War"};
-        String[] artDateList = {"21 Jun 2023", "12 Mar 2023", "05 Sep 2023", "28 Dec 2023", "17 Aug 2023"};
-        Double[] artPriceList = {Double.valueOf("350000"),Double.valueOf("400000"),Double.valueOf("500000"),Double.valueOf("400000"),Double.valueOf("250000")};
-        int[] artImageList = {R.drawable.ramayana, R.drawable.hamlet, R.drawable.romeojuliet, R.drawable.tempest, R.drawable.artofwar};
-        for (int i = 0; i < artPriceList.length; i++) {
-            listTicket = new ListTicket(artNameList[i], artDateList[i], artPriceList[i], artImageList[i]);
+        String[] OtherNameList = {"SnakeBoy"};
+        String[] OtherDateList = {"10 Jun 2024"};
+        Double[] OtherPriceList = {Double.valueOf("200000")};
+        int[] OtherImageList = {R.drawable.sneakyboy};
+        for (int i = 0; i < OtherPriceList.length; i++) {
+            listTicket = new ListTicket(OtherNameList[i], OtherDateList[i], OtherPriceList[i], OtherImageList[i]);
             dataArrayList.add(listTicket);
         }
-        listAdapter = new ListAdapter(ViewTicket.this, dataArrayList);
-        binding.artlist.setAdapter(listAdapter);
-        binding.artlist.setClickable(true);
-        binding.artlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listAdapter = new ListAdapter(ViewTicketOther.this, dataArrayList);
+        binding.otherlist.setAdapter(listAdapter);
+        binding.otherlist.setClickable(true);
+        binding.otherlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(ViewTicket.this, TicketForm.class);
-                intent.putExtra("passimage", artImageList[i]);
-                intent.putExtra("passimage", artImageList[i]);
-                intent.putExtra("passname", artNameList[i]);
-                intent.putExtra("passprice", artPriceList[i]);
+                Intent intent = new Intent(ViewTicketOther.this, TicketForm.class);
+                intent.putExtra("passimage", OtherImageList[i]);
+                intent.putExtra("passimage", OtherImageList[i]);
+                intent.putExtra("passname", OtherNameList[i]);
+                intent.putExtra("passprice", OtherPriceList[i]);
                 startActivity(intent);
             }
         });
@@ -97,14 +99,14 @@ public class ViewTicket extends AppCompatActivity {
             }
         });
 
-        Button butMusic = findViewById(R.id.ArtMusic);
-        Button butAM = findViewById(R.id.ArtAM);
-        Button butOther = findViewById(R.id.ArtOther);
+        Button butArt = findViewById(R.id.OtherArt);
+        Button butMusic = findViewById(R.id.OtherMusic);
+        Button butAM = findViewById(R.id.OtherAM);
 
         butMusic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ViewTicket.this, ViewTicketMusic.class);
+                Intent intent = new Intent(ViewTicketOther.this, ViewTicketMusic.class);
                 startActivity(intent);
             }
         });
@@ -112,15 +114,15 @@ public class ViewTicket extends AppCompatActivity {
         butAM.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ViewTicket.this, ViewTicketAM.class);
+                Intent intent = new Intent(ViewTicketOther.this, ViewTicketAM.class);
                 startActivity(intent);
             }
         });
 
-        butOther.setOnClickListener(new View.OnClickListener() {
+        butArt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ViewTicket.this, ViewTicketOther.class);
+                Intent intent = new Intent(ViewTicketOther.this, ViewTicket.class);
                 startActivity(intent);
             }
         });
@@ -132,7 +134,7 @@ public class ViewTicket extends AppCompatActivity {
                 int itemId = item.getItemId();
 
                 if (itemId == R.id.home) {
-                    Intent intent = new Intent(ViewTicket.this, Home.class);
+                    Intent intent = new Intent(ViewTicketOther.this, Home.class);
                     startActivity(intent);
                     return true;
                 } else if (itemId == R.id.aboutus) {
@@ -151,11 +153,11 @@ public class ViewTicket extends AppCompatActivity {
                     // Perform the desired action or navigate to the About Us 2 screen/activity
                     return true;
                 } else if (itemId == R.id.ticket) {
-                    Intent intent = new Intent(ViewTicket.this, ViewTicket.class);
+                    Intent intent = new Intent(ViewTicketOther.this, ViewTicket.class);
                     startActivity(intent);
                     return true;
                 } else if (itemId == R.id.logout) {
-                    Intent intent = new Intent(ViewTicket.this, Login.class);
+                    Intent intent = new Intent(ViewTicketOther.this, Login.class);
                     startActivity(intent);
                     return true;
                 }

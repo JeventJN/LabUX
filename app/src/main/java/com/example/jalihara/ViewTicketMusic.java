@@ -11,21 +11,23 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import com.example.jalihara.databinding.ViewticketmusicBinding;
 import com.google.android.material.navigation.NavigationView;
-import com.example.jalihara.databinding.ViewticketBinding;
+
 import java.util.ArrayList;
 
-public class ViewTicket extends AppCompatActivity {
-    ViewticketBinding binding;
+public class ViewTicketMusic extends AppCompatActivity {
+    ViewticketmusicBinding binding;
     ListAdapter listAdapter;
     ArrayList<ListTicket> dataArrayList = new ArrayList<>();
-    ListTicket listTicket;
+    ListTicket listTicketMusic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
-        binding = ViewticketBinding.inflate(getLayoutInflater());
+        binding = ViewticketmusicBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         LinearLayout navbar = findViewById(R.id.navbar);
         LinearLayout navbarsub = findViewById(R.id.navbarsub);
@@ -34,25 +36,53 @@ public class ViewTicket extends AppCompatActivity {
         navbar.setVisibility(View.GONE);
         navbarsub.setVisibility(View.GONE);
 
-        String[] artNameList = {"Ramayana", "Hamlet", "Romeo & Juliet", "The Tempest", "The Art of War"};
-        String[] artDateList = {"21 Jun 2023", "12 Mar 2023", "05 Sep 2023", "28 Dec 2023", "17 Aug 2023"};
-        Double[] artPriceList = {Double.valueOf("350000"),Double.valueOf("400000"),Double.valueOf("500000"),Double.valueOf("400000"),Double.valueOf("250000")};
-        int[] artImageList = {R.drawable.ramayana, R.drawable.hamlet, R.drawable.romeojuliet, R.drawable.tempest, R.drawable.artofwar};
-        for (int i = 0; i < artPriceList.length; i++) {
-            listTicket = new ListTicket(artNameList[i], artDateList[i], artPriceList[i], artImageList[i]);
-            dataArrayList.add(listTicket);
+        String[] MusicNameList = {"Coldplay", "Kodaline", "Sheila on 7", "Simple Plan", "Maroon5"};
+        String[] MusicDateList = {"10 Jun 2024", "20 Feb 2024", "12 Dec 2023", "19 Jul 2023", "25 Mar 2024"};
+        Double[] MusicPriceList = {Double.valueOf("800000"),Double.valueOf("600000"),Double.valueOf("450000"),Double.valueOf("500000"),Double.valueOf("850000")};
+        int[] MusicImageList = {R.drawable.coldplay, R.drawable.kodaline, R.drawable.sheilaon7, R.drawable.simpleplan, R.drawable.maroon5};
+        for (int i = 0; i < MusicPriceList.length; i++) {
+            listTicketMusic = new ListTicket(MusicNameList[i], MusicDateList[i], MusicPriceList[i], MusicImageList[i]);
+            dataArrayList.add(listTicketMusic);
         }
-        listAdapter = new ListAdapter(ViewTicket.this, dataArrayList);
-        binding.artlist.setAdapter(listAdapter);
-        binding.artlist.setClickable(true);
-        binding.artlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listAdapter = new ListAdapter(ViewTicketMusic.this, dataArrayList);
+        binding.musiclist.setAdapter(listAdapter);
+        binding.musiclist.setClickable(true);
+
+        binding.musiclist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(ViewTicket.this, TicketForm.class);
-                intent.putExtra("passimage", artImageList[i]);
-                intent.putExtra("passimage", artImageList[i]);
-                intent.putExtra("passname", artNameList[i]);
-                intent.putExtra("passprice", artPriceList[i]);
+                Intent intent = new Intent(ViewTicketMusic.this, TicketForm.class);
+                intent.putExtra("passimage", MusicImageList[i]);
+                intent.putExtra("passname", MusicNameList[i]);
+                intent.putExtra("passprice", MusicPriceList[i]);
+                startActivity(intent);
+            }
+        });
+
+        Button butArt = findViewById(R.id.MusicArt);
+        Button butAM = findViewById(R.id.MusicAM);
+        Button butOther = findViewById(R.id.MusicOther);
+
+        butArt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ViewTicketMusic.this, ViewTicket.class);
+                startActivity(intent);
+            }
+        });
+
+        butAM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ViewTicketMusic.this, ViewTicketAM.class);
+                startActivity(intent);
+            }
+        });
+
+        butOther.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ViewTicketMusic.this, ViewTicketOther.class);
                 startActivity(intent);
             }
         });
@@ -97,34 +127,6 @@ public class ViewTicket extends AppCompatActivity {
             }
         });
 
-        Button butMusic = findViewById(R.id.ArtMusic);
-        Button butAM = findViewById(R.id.ArtAM);
-        Button butOther = findViewById(R.id.ArtOther);
-
-        butMusic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ViewTicket.this, ViewTicketMusic.class);
-                startActivity(intent);
-            }
-        });
-
-        butAM.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ViewTicket.this, ViewTicketAM.class);
-                startActivity(intent);
-            }
-        });
-
-        butOther.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ViewTicket.this, ViewTicketOther.class);
-                startActivity(intent);
-            }
-        });
-
         NavigationView navigationShow = findViewById(R.id.navigationShow);
         navigationShow.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -132,7 +134,7 @@ public class ViewTicket extends AppCompatActivity {
                 int itemId = item.getItemId();
 
                 if (itemId == R.id.home) {
-                    Intent intent = new Intent(ViewTicket.this, Home.class);
+                    Intent intent = new Intent(ViewTicketMusic.this, Home.class);
                     startActivity(intent);
                     return true;
                 } else if (itemId == R.id.aboutus) {
@@ -151,11 +153,11 @@ public class ViewTicket extends AppCompatActivity {
                     // Perform the desired action or navigate to the About Us 2 screen/activity
                     return true;
                 } else if (itemId == R.id.ticket) {
-                    Intent intent = new Intent(ViewTicket.this, ViewTicket.class);
+                    Intent intent = new Intent(ViewTicketMusic.this, ViewTicket.class);
                     startActivity(intent);
                     return true;
                 } else if (itemId == R.id.logout) {
-                    Intent intent = new Intent(ViewTicket.this, Login.class);
+                    Intent intent = new Intent(ViewTicketMusic.this, Login.class);
                     startActivity(intent);
                     return true;
                 }
