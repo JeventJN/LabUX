@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.jalihara.databinding.ViewticketmusicBinding;
 import com.google.android.material.navigation.NavigationView;
@@ -35,6 +36,8 @@ public class ViewTicketMusic extends AppCompatActivity {
         LinearLayout headerbar = findViewById(R.id.headerbar);
         navbar.setVisibility(View.GONE);
         navbarsub.setVisibility(View.GONE);
+        TextView pagetitle = findViewById(R.id.pagetitle);
+        pagetitle.setText("Ticket");
 
         String[] MusicNameList = {"Coldplay", "Kodaline", "Sheila on 7", "Simple Plan", "Maroon5"};
         String[] MusicDateList = {"10 Jun 2024", "20 Feb 2024", "12 Dec 2023", "19 Jul 2023", "25 Mar 2024"};
@@ -162,6 +165,26 @@ public class ViewTicketMusic extends AppCompatActivity {
                     return true;
                 }
 
+                return false;
+            }
+        });
+        NavigationView navigationsubshow = findViewById(R.id.navigationsubshow);
+        navigationsubshow.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int itemId = item.getItemId();
+                if (itemId == R.id.aboutus1) {
+                    Intent intent = new Intent(ViewTicketMusic.this, MainAUCU.class);
+                    intent.putExtra("flag", "aboutus");
+                    startActivity(intent);
+                    return true;
+                }
+                else if (itemId == R.id.aboutus2) {
+                    Intent intent = new Intent(ViewTicketMusic.this, MainAUCU.class);
+                    intent.putExtra("flag", "contactus");
+                    startActivity(intent);
+                    return true;
+                }
                 return false;
             }
         });

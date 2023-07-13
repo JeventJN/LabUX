@@ -1,18 +1,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/home"
-        android:title="@string/home" />
+        android:title="@string/home"
+        android:icon="@drawable/hand"/>
 
     <item
         android:id="@+id/aboutus"
-        android:title="@string/aboutus">
-    </item>
+        android:title="@string/aboutus"
+        android:icon="@mipmap/jalihara"/>
 
     <item
         android:id="@+id/ticket"
-        android:title="@string/viewtickets" />
+        android:title="@string/viewtickets"
+        android:icon="@mipmap/jalihara"/>
 
     <item
         android:id="@+id/logout"
-        android:title="@string/logout" />
+        android:title="@string/logout"
+        android:icon="@mipmap/jalihara"/>
 </menu>

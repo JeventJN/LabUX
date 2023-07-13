@@ -3,12 +3,15 @@ package com.example.jalihara;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -19,24 +22,104 @@ import android.widget.TextView;
 import com.example.jalihara.databinding.TicketformBinding;
 import com.example.jalihara.databinding.ViewticketBinding;
 import com.google.android.material.navigation.NavigationView;
+
+import java.text.BreakIterator;
+
 public class TicketForm extends AppCompatActivity {
     TicketformBinding binding;
 
     private Dialog dialog;
+
+    private View dialogView;
 
     private void showDialog() {
         dialog = new Dialog(this);
         dialog.setContentView(R.layout.ticketdialog);
         dialog.setCancelable(false);
         dialog.show();
+        dialogView = dialog.findViewById(android.R.id.content);
+
+        EditText customerEditText = findViewById(R.id.customer);
+        String customerName = customerEditText.getText().toString();;
+        EditText quantityEditText = findViewById(R.id.quantity);
+        String quantity = quantityEditText.getText().toString();;
+        Double quantityCount = Double.parseDouble(quantity);
+        TextView ticketdialogTitle = dialogView.findViewById(R.id.ticketdialogTitle);
+        TextView customerPassed = dialogView.findViewById(R.id.customerPassed);
+        TextView quantityPassed = dialogView.findViewById(R.id.quantityPassed);
+        TextView boothPassed = dialogView.findViewById(R.id.boothPassed);
+        TextView totalprice = dialogView.findViewById(R.id.totalprice);
+        TextView pricedetailed = dialogView.findViewById(R.id.pricedetailed);
+        TextView confirmpassworderror = dialogView.findViewById(R.id.confirmpassworderror);
+        confirmpassworderror.setVisibility(View.GONE);
+
+        Intent intent = this.getIntent();
+        String name = intent.getStringExtra("passname");
+        Double price = intent.getDoubleExtra("passprice", 0);
+
+        RadioGroup boothtype = findViewById(R.id.boothtype);
+        int selectedRadioButtonId = boothtype.getCheckedRadioButtonId();
+        RadioButton selectedRadioButton = findViewById(selectedRadioButtonId);
+        String boothstring = selectedRadioButton.getText().toString();
+
+        String passwordLogin = Login.getInstance().getPasswordLogin();
+
+        ticketdialogTitle.setText(name);
+        customerPassed.setText("Name          :  " + customerName);
+        quantityPassed.setText("Quantity      :  " + quantity);
+        boothPassed.setText("Seat Type   :  " + boothstring);
+
+        if (boothstring.equals("VIP")){
+            Double price2 = price * 2 * quantityCount;
+            String convertprice2 = new Double(price2).toString();
+            totalprice.setText("Total Price  :  Rp" + convertprice2);
+        }
+        else{
+            Double price2 = price * quantityCount;
+            String convertprice2 = new Double(price2).toString();
+            totalprice.setText("Total Price  :  Rp" + convertprice2);
+        }
+        pricedetailed.setText("VIP=2*Regular");
+
+
+        ImageView closedialog = dialogView.findViewById(R.id.closedialog);
+        closedialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismissDialog();
+            }
+        });
+
+        TextView dialogcancel = dialogView.findViewById(R.id.dailogcancel);
+        dialogcancel.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                dismissDialog();
+            }
+        });
+
+        TextView dialogpurchase = dialogView.findViewById(R.id.dailogpurchase);
+        dialogpurchase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView passwordtest = dialogView.findViewById(R.id.password);
+                String passwordValue = passwordtest.getText().toString();
+                if (passwordLogin.equals(passwordValue)){
+                    Intent intent = new Intent(TicketForm.this, Home.class);
+                    startActivity(intent);
+                }
+                else{
+                    confirmpassworderror.setText("Password is not the same");
+                    confirmpassworderror.setVisibility(View.VISIBLE);
+                }
+            }
+        });
     }
 
-//    private void dismissDialog() {
-//        if (dialog.isShowing()) {
-//            public void
-//            dialog.dismiss();
-//        }
-//    }
+    private void dismissDialog() {
+        dialog.dismiss();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +145,9 @@ public class TicketForm extends AppCompatActivity {
         navbar.setVisibility(View.GONE);
         navbarsub.setVisibility(View.GONE);
         ImageView imagemenu = findViewById(R.id.imagemenu);
+        TextView pagetitle = findViewById(R.id.pagetitle);
+        pagetitle.setText("Buy Ticket");
+
         imagemenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,16 +165,13 @@ public class TicketForm extends AppCompatActivity {
         });
 
         Intent intent = this.getIntent();
-        if (intent != null){
-            String name = intent.getStringExtra("passname");
-            Double price = intent.getDoubleExtra("passprice", 0);
-            int image = intent.getIntExtra("passimage", 0);
-            String convertprice = new Double(price).toString();
-            binding.passedname.setText(name);
-            binding.passedprice.setText("Rp" + convertprice);
-            binding.passedimage.setImageResource(image);
-
-        }
+        String name = intent.getStringExtra("passname");
+        Double price = intent.getDoubleExtra("passprice", 0);
+        int image = intent.getIntExtra("passimage", 0);
+        String convertprice = new Double(price).toString();
+        binding.passedname.setText(name);
+        binding.passedprice.setText("Rp" + convertprice);
+        binding.passedimage.setImageResource(image);
         ticketformcontent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -158,23 +241,15 @@ public class TicketForm extends AppCompatActivity {
                     bootherror.setVisibility(View.VISIBLE);
                     isBoothValid = false;
                 } else {
-                    int selectedRadioButtonId = boothtype.getCheckedRadioButtonId();
-                    RadioButton selectedRadioButton = findViewById(selectedRadioButtonId);
-                    String boothstring = selectedRadioButton.getText().toString();
                     bootherror.setVisibility(View.INVISIBLE);
                 }
 
                 if (isNameValid && isQuantityValid && isBoothValid) {
                     showDialog();
+
                 }
             }
         });
-
-//        @Override
-//        protected void onPause() {
-//            super.onPause();
-//            dismissDialog();
-//        }
 
         NavigationView navigationShow = findViewById(R.id.navigationShow);
         navigationShow.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -203,6 +278,27 @@ public class TicketForm extends AppCompatActivity {
                     return true;
                 } else if (itemId == R.id.logout) {
                     Intent intent = new Intent(TicketForm.this, Login.class);
+                    startActivity(intent);
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        NavigationView navigationsubshow = findViewById(R.id.navigationsubshow);
+        navigationsubshow.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int itemId = item.getItemId();
+                if (itemId == R.id.aboutus1) {
+                    Intent intent = new Intent(TicketForm.this, MainAUCU.class);
+                    intent.putExtra("flag", "aboutus");
+                    startActivity(intent);
+                    return true;
+                }
+                else if (itemId == R.id.aboutus2) {
+                    Intent intent = new Intent(TicketForm.this, MainAUCU.class);
+                    intent.putExtra("flag", "contactus");
                     startActivity(intent);
                     return true;
                 }

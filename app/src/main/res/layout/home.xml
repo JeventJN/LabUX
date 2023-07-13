@@ -14,11 +14,11 @@
             layout="@layout/navigationheader"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <ScrollView
+    <ScrollView
         android:id="@+id/homecontent"
         android:layout_marginTop="77dp"
         android:layout_width="match_parent"
-        android:layout_height="600dp">
+        android:layout_height="680dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -129,13 +129,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginTop="-50dp">
+
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/homegoticket"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:scaleX="1.2"
                     android:scaleY="1.2"
-                    android:layout_gravity="center"/>
+                    android:src="@drawable/homegoticket" />
                 <Button
                     android:id="@+id/goticketbutton"
                     android:layout_width="100dp"
