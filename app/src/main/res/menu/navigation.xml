@@ -2,20 +2,24 @@
     <item
         android:id="@+id/home"
         android:title="@string/home"
-        android:icon="@drawable/hand"/>
+        android:icon="@drawable/home"
+        android:iconTint="@color/white"/>
 
     <item
         android:id="@+id/aboutus"
         android:title="@string/aboutus"
-        android:icon="@mipmap/jalihara"/>
+        android:icon="@mipmap/jalihara"
+        android:iconTint="@color/white"/>
 
     <item
         android:id="@+id/ticket"
         android:title="@string/viewtickets"
-        android:icon="@mipmap/jalihara"/>
+        android:icon="@drawable/ticket"
+        android:iconTint="@color/white"/>
 
     <item
         android:id="@+id/logout"
         android:title="@string/logout"
-        android:icon="@mipmap/jalihara"/>
+        android:icon="@drawable/aboutus"
+        android:iconTint="@color/white"/>
 </menu>

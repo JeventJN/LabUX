@@ -51,7 +51,7 @@ public class TicketForm extends AppCompatActivity {
         TextView totalprice = dialogView.findViewById(R.id.totalprice);
         TextView pricedetailed = dialogView.findViewById(R.id.pricedetailed);
         TextView confirmpassworderror = dialogView.findViewById(R.id.confirmpassworderror);
-        confirmpassworderror.setVisibility(View.GONE);
+        confirmpassworderror.setVisibility(View.INVISIBLE);
 
         Intent intent = this.getIntent();
         String name = intent.getStringExtra("passname");

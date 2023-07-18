@@ -13,6 +13,7 @@ import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -131,8 +132,8 @@ public class Home extends AppCompatActivity {
         viewPager.setCurrentItem(0, false);
 
         final int NUM_PAGES = imageList.size();
-        final long DELAY_MS = 3000;
-        final long PERIOD_MS = 5000;
+        final long DELAY_MS = 1000;
+        final long PERIOD_MS = 1000;
 
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
@@ -180,6 +181,14 @@ public class Home extends AppCompatActivity {
             }
         });
 
+        FrameLayout homeAll = findViewById(R.id.homeAll);
+        homeAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, ViewTicket.class);
+                startActivity(intent);
+            }
+        });
 
         horizontalpopularitem.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -221,17 +230,7 @@ public class Home extends AppCompatActivity {
                 }
             }
         });
-        homecontent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (navbar.getVisibility() == View.VISIBLE) {
-                    navbar.setVisibility(View.GONE);
-                    navbarsub.setVisibility(View.GONE);
-                    homecontent.setAlpha(1f);
-                    headerbar.setAlpha(1f);
-                }
-            }
-        });
+
         headerbar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
