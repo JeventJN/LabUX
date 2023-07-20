@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -89,26 +90,33 @@ public class MainAUCU extends AppCompatActivity {
         navbar.setVisibility(View.GONE);
         navbarsub.setVisibility(View.GONE);
 
+        FrameLayout closenavigation = findViewById(R.id.closenavigation);
         ImageView imagemenu = findViewById(R.id.imagemenu);
+        closenavigation.setVisibility(View.GONE);
+
         imagemenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (navbar.getVisibility() == View.VISIBLE) {
+                if (closenavigation.getVisibility() == View.VISIBLE) {
+                    closenavigation.setVisibility(View.GONE);
                     navbar.setVisibility(View.GONE);
                     navbarsub.setVisibility(View.GONE);
                     aboutuscontent.setAlpha(1f);
                     headerbar.setAlpha(1f);
                 } else {
                     navbar.setVisibility(View.VISIBLE);
+                    closenavigation.setVisibility(View.VISIBLE);
                     aboutuscontent.setAlpha(0.1f);
                     headerbar.setAlpha(0.1f);
                 }
             }
         });
-        aboutuscontent.setOnClickListener(new View.OnClickListener() {
+
+        closenavigation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (navbar.getVisibility() == View.VISIBLE) {
+                if (closenavigation.getVisibility() == View.VISIBLE) {
+                    closenavigation.setVisibility(View.GONE);
                     navbar.setVisibility(View.GONE);
                     navbarsub.setVisibility(View.GONE);
                     aboutuscontent.setAlpha(1f);
@@ -116,10 +124,12 @@ public class MainAUCU extends AppCompatActivity {
                 }
             }
         });
+
         headerbar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (navbar.getVisibility() == View.VISIBLE) {
+                if (closenavigation.getVisibility() == View.VISIBLE) {
+                    closenavigation.setVisibility(View.GONE);
                     navbar.setVisibility(View.GONE);
                     navbarsub.setVisibility(View.GONE);
                     aboutuscontent.setAlpha(1f);

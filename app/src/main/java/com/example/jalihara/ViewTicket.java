@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -61,26 +62,33 @@ public class ViewTicket extends AppCompatActivity {
             }
         });
 
+        FrameLayout closenavigation = findViewById(R.id.closenavigation);
         ImageView imagemenu = findViewById(R.id.imagemenu);
+        closenavigation.setVisibility(View.GONE);
+
         imagemenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (navbar.getVisibility() == View.VISIBLE) {
+                if (closenavigation.getVisibility() == View.VISIBLE) {
+                    closenavigation.setVisibility(View.GONE);
                     navbar.setVisibility(View.GONE);
                     navbarsub.setVisibility(View.GONE);
                     ticketcontent.setAlpha(1f);
                     headerbar.setAlpha(1f);
                 } else {
                     navbar.setVisibility(View.VISIBLE);
+                    closenavigation.setVisibility(View.VISIBLE);
                     ticketcontent.setAlpha(0.1f);
                     headerbar.setAlpha(0.1f);
                 }
             }
         });
-        ticketcontent.setOnClickListener(new View.OnClickListener() {
+
+        closenavigation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (navbar.getVisibility() == View.VISIBLE) {
+                if (closenavigation.getVisibility() == View.VISIBLE) {
+                    closenavigation.setVisibility(View.GONE);
                     navbar.setVisibility(View.GONE);
                     navbarsub.setVisibility(View.GONE);
                     ticketcontent.setAlpha(1f);
@@ -88,10 +96,12 @@ public class ViewTicket extends AppCompatActivity {
                 }
             }
         });
+
         headerbar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (navbar.getVisibility() == View.VISIBLE) {
+                if (closenavigation.getVisibility() == View.VISIBLE) {
+                    closenavigation.setVisibility(View.GONE);
                     navbar.setVisibility(View.GONE);
                     navbarsub.setVisibility(View.GONE);
                     ticketcontent.setAlpha(1f);

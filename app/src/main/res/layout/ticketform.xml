@@ -6,7 +6,7 @@
     android:orientation="vertical">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:elevation="10dp">
         <include
             layout="@layout/navigationheader"/>
@@ -38,6 +38,7 @@
                 app:layout_constraintVertical_bias="0.035">
 
                 <ImageView
+                    android:id="@+id/backbutton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="1dp"

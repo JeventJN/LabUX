@@ -20,7 +20,6 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.example.jalihara.databinding.TicketformBinding;
-import com.example.jalihara.databinding.ViewticketBinding;
 import com.google.android.material.navigation.NavigationView;
 
 import java.text.BreakIterator;
@@ -144,23 +143,15 @@ public class TicketForm extends AppCompatActivity {
         bootherror.setVisibility(View.GONE);
         navbar.setVisibility(View.GONE);
         navbarsub.setVisibility(View.GONE);
-        ImageView imagemenu = findViewById(R.id.imagemenu);
         TextView pagetitle = findViewById(R.id.pagetitle);
         pagetitle.setText("Buy Ticket");
+        ImageView backbutton = findViewById(R.id.backbutton);
 
-        imagemenu.setOnClickListener(new View.OnClickListener() {
+        backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (navbar.getVisibility() == View.VISIBLE) {
-                    navbar.setVisibility(View.GONE);
-                    navbarsub.setVisibility(View.GONE);
-                    ticketformcontent.setAlpha(1f);
-                    headerbar.setAlpha(1f);
-                } else {
-                    navbar.setVisibility(View.VISIBLE);
-                    ticketformcontent.setAlpha(0.1f);
-                    headerbar.setAlpha(0.1f);
-                }
+                Intent intent = new Intent(TicketForm.this, ViewTicket.class);
+                startActivity(intent);
             }
         });
 
@@ -172,10 +163,35 @@ public class TicketForm extends AppCompatActivity {
         binding.passedname.setText(name);
         binding.passedprice.setText("Rp" + convertprice);
         binding.passedimage.setImageResource(image);
-        ticketformcontent.setOnClickListener(new View.OnClickListener() {
+
+
+        FrameLayout closenavigation = findViewById(R.id.closenavigation);
+        ImageView imagemenu = findViewById(R.id.imagemenu);
+        closenavigation.setVisibility(View.GONE);
+
+        imagemenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (navbar.getVisibility() == View.VISIBLE) {
+                if (closenavigation.getVisibility() == View.VISIBLE) {
+                    closenavigation.setVisibility(View.GONE);
+                    navbar.setVisibility(View.GONE);
+                    navbarsub.setVisibility(View.GONE);
+                    ticketformcontent.setAlpha(1.0f);
+                    headerbar.setAlpha(1.0f);
+                } else {
+                    navbar.setVisibility(View.VISIBLE);
+                    closenavigation.setVisibility(View.VISIBLE);
+                    ticketformcontent.setAlpha(0.1f);
+                    headerbar.setAlpha(0.1f);
+                }
+            }
+        });
+
+        closenavigation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (closenavigation.getVisibility() == View.VISIBLE) {
+                    closenavigation.setVisibility(View.GONE);
                     navbar.setVisibility(View.GONE);
                     navbarsub.setVisibility(View.GONE);
                     ticketformcontent.setAlpha(1f);
@@ -183,10 +199,25 @@ public class TicketForm extends AppCompatActivity {
                 }
             }
         });
+
+        closenavigation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (closenavigation.getVisibility() == View.VISIBLE) {
+                    closenavigation.setVisibility(View.GONE);
+                    navbar.setVisibility(View.GONE);
+                    navbarsub.setVisibility(View.GONE);
+                    ticketformcontent.setAlpha(1f);
+                    headerbar.setAlpha(1f);
+                }
+            }
+        });
+
         headerbar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (navbar.getVisibility() == View.VISIBLE) {
+                if (closenavigation.getVisibility() == View.VISIBLE) {
+                    closenavigation.setVisibility(View.GONE);
                     navbar.setVisibility(View.GONE);
                     navbarsub.setVisibility(View.GONE);
                     ticketformcontent.setAlpha(1f);
@@ -195,6 +226,7 @@ public class TicketForm extends AppCompatActivity {
 //                ticketcontent.performClick(); ini kehitung klik 2x, klik headerbar terus klik ticketcontent
             }
         });
+
 
         buttonbuy.setOnClickListener(new View.OnClickListener() {
             @Override
