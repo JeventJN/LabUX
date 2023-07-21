@@ -9,8 +9,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.jalihara.databinding.ViewticketotherBinding;
 import com.google.android.material.navigation.NavigationView;
@@ -35,6 +37,8 @@ public class ViewTicketOther extends AppCompatActivity {
         LinearLayout headerbar = findViewById(R.id.headerbar);
         navbar.setVisibility(View.GONE);
         navbarsub.setVisibility(View.GONE);
+        TextView pagetitle = findViewById(R.id.pagetitle);
+        pagetitle.setText("Ticket");
 
         String[] OtherNameList = {"SnakeBoy"};
         String[] OtherDateList = {"10 Jun 2024"};
@@ -59,26 +63,33 @@ public class ViewTicketOther extends AppCompatActivity {
             }
         });
 
+        FrameLayout closenavigation = findViewById(R.id.closenavigation);
         ImageView imagemenu = findViewById(R.id.imagemenu);
+        closenavigation.setVisibility(View.GONE);
+
         imagemenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (navbar.getVisibility() == View.VISIBLE) {
+                if (closenavigation.getVisibility() == View.VISIBLE) {
+                    closenavigation.setVisibility(View.GONE);
                     navbar.setVisibility(View.GONE);
                     navbarsub.setVisibility(View.GONE);
                     ticketcontent.setAlpha(1f);
                     headerbar.setAlpha(1f);
                 } else {
                     navbar.setVisibility(View.VISIBLE);
+                    closenavigation.setVisibility(View.VISIBLE);
                     ticketcontent.setAlpha(0.1f);
                     headerbar.setAlpha(0.1f);
                 }
             }
         });
-        ticketcontent.setOnClickListener(new View.OnClickListener() {
+
+        closenavigation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (navbar.getVisibility() == View.VISIBLE) {
+                if (closenavigation.getVisibility() == View.VISIBLE) {
+                    closenavigation.setVisibility(View.GONE);
                     navbar.setVisibility(View.GONE);
                     navbarsub.setVisibility(View.GONE);
                     ticketcontent.setAlpha(1f);
@@ -86,10 +97,13 @@ public class ViewTicketOther extends AppCompatActivity {
                 }
             }
         });
+        navbar.setClickable(false);
+
         headerbar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (navbar.getVisibility() == View.VISIBLE) {
+                if (closenavigation.getVisibility() == View.VISIBLE) {
+                    closenavigation.setVisibility(View.GONE);
                     navbar.setVisibility(View.GONE);
                     navbarsub.setVisibility(View.GONE);
                     ticketcontent.setAlpha(1f);
@@ -162,6 +176,26 @@ public class ViewTicketOther extends AppCompatActivity {
                     return true;
                 }
 
+                return false;
+            }
+        });
+        NavigationView navigationsubshow = findViewById(R.id.navigationsubshow);
+        navigationsubshow.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int itemId = item.getItemId();
+                if (itemId == R.id.aboutus1) {
+                    Intent intent = new Intent(ViewTicketOther.this, MainAUCU.class);
+                    intent.putExtra("flag", "aboutus");
+                    startActivity(intent);
+                    return true;
+                }
+                else if (itemId == R.id.aboutus2) {
+                    Intent intent = new Intent(ViewTicketOther.this, MainAUCU.class);
+                    intent.putExtra("flag", "contactus");
+                    startActivity(intent);
+                    return true;
+                }
                 return false;
             }
         });

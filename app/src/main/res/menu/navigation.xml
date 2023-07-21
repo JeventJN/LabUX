@@ -1,18 +1,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/home"
+        android:icon="@drawable/homelogo"
         android:title="@string/home" />
 
     <item
         android:id="@+id/aboutus"
-        android:title="@string/aboutus">
-    </item>
+        android:icon="@drawable/aboutuslogo"
+        android:title="@string/aboutus" />
 
     <item
         android:id="@+id/ticket"
+        android:icon="@drawable/ticketlogo"
         android:title="@string/viewtickets" />
 
     <item
         android:id="@+id/logout"
+        android:icon="@drawable/logoutlogo"
         android:title="@string/logout" />
 </menu>

@@ -22,6 +22,7 @@
                 android:background="@drawable/ticketcatrounded">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:cardCornerRadius="20dp"
@@ -37,7 +38,7 @@
                         android:background="@drawable/ticketcatrounded"
                         android:scaleX="2.0"
                         android:scaleY="2.0"
-                        android:src="@drawable/romeojuliet" />
+                        android:src="@drawable/romeojuliet"/>
                 </androidx.cardview.widget.CardView>
 
                 <TextView
@@ -80,19 +81,32 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.953" />
 
-<!--                <Button-->
-<!--                    android:id="@+id/buttonbuy"-->
-<!--                    android:layout_width="70dp"-->
-<!--                    android:layout_height="40dp"-->
-<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                    app:layout_constraintEnd_toEndOf="parent"-->
-<!--                    app:layout_constraintHorizontal_bias="0.967"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toTopOf="parent"-->
-<!--                    app:layout_constraintVertical_bias="0.938"-->
-<!--                    android:backgroundTint="@drawable/ticketcathover"-->
-<!--                    android:text="Buy"-->
-<!--                    android:textColor="@color/black"/>-->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="75dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.97"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.949"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:foregroundGravity="center"
+                    app:cardCornerRadius="30dp">
+                    <Button
+                        android:id="@+id/buttonbuy"
+                        android:layout_width="75dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center"
+                        android:backgroundTint="@drawable/ticketcathover"
+                        android:gravity="center"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
+                        android:text="Buy"
+                        android:textColor="@color/black"
+                        android:textSize="10dp"/>
+                </androidx.cardview.widget.CardView>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </LinearLayout>

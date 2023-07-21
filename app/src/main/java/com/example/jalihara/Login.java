@@ -9,12 +9,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class Login extends AppCompatActivity {
+    private static Login instance;
+    private String passwordLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login); // Replace R.layout.login with the actual resource ID of your login.xml file
+        setContentView(R.layout.login);
+        instance = this;
 
         EditText usernameEditText = findViewById(R.id.username);
         EditText passwordEditText = findViewById(R.id.password);
@@ -57,6 +60,7 @@ public class Login extends AppCompatActivity {
                 }
 
                 if (isUsernameValid && isPasswordValid) {
+                    instance.setPasswordLogin(password);
                     Intent intent = new Intent(Login.this, Home.class);
                     intent.putExtra("username", username);
                     intent.putExtra("password", password);
@@ -64,5 +68,21 @@ public class Login extends AppCompatActivity {
                 }
             }
         });
+    }
+    public static Login getInstance() {
+        if (instance == null) {
+            instance = new Login();
+        }
+        return instance;
+    }
+
+    // Setter method for passwordLogin
+    public void setPasswordLogin(String passwordLogin) {
+        this.passwordLogin = passwordLogin;
+    }
+
+    // Getter method for passwordLogin
+    public String getPasswordLogin() {
+        return passwordLogin;
     }
 }

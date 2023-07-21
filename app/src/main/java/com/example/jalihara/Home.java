@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -36,6 +38,7 @@ public class Home extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
         HomeBinding binding = HomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -51,7 +54,7 @@ public class Home extends AppCompatActivity {
         String welcomeMessage = "Welcome, " + username + "!";
         welcomeTextView.setText(welcomeMessage);
 
-        String[] PopularNameList = {"ADWADAD", "Hamlet", "Romeo & Juliet", "The Tempest", "The Art of War"};
+        String[] PopularNameList = {"Ramayana", "Hamlet", "Romeo & Juliet", "The Tempest", "The Art of War"};
         String[] PopularDateList = {"21 Jun 2023", "12 Mar 2023", "05 Sep 2023", "28 Dec 2023", "17 Aug 2023"};
         Double[] PopularPriceList = {Double.valueOf("350000"),Double.valueOf("400000"),Double.valueOf("500000"),Double.valueOf("400000"),Double.valueOf("250000")};
         int[] PopularImageList = {R.drawable.ramayana, R.drawable.hamlet, R.drawable.romeojuliet, R.drawable.tempest, R.drawable.artofwar};
@@ -60,8 +63,8 @@ public class Home extends AppCompatActivity {
             dataArrayListPopular.add(listTicketPopular);
         }
         listAdapterPopular = new ListAdapterPopular(Home.this, dataArrayListPopular);
-        binding.horizontalpopularitem.setAdapter(listAdapterPopular);
-        binding.horizontalpopularitem.setClickable(true);
+        binding.popularitem.setAdapter(listAdapterPopular);
+        binding.popularitem.setClickable(true);
         rotationAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
@@ -70,7 +73,7 @@ public class Home extends AppCompatActivity {
             }
         });
 
-        binding.horizontalpopularitem.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        binding.popularitem.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(Home.this, TicketForm.class);
@@ -129,8 +132,8 @@ public class Home extends AppCompatActivity {
         viewPager.setCurrentItem(0, false);
 
         final int NUM_PAGES = imageList.size();
-        final long DELAY_MS = 3000;
-        final long PERIOD_MS = 5000;
+        final long DELAY_MS = 1000;
+        final long PERIOD_MS = 1000;
 
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
@@ -162,12 +165,24 @@ public class Home extends AppCompatActivity {
         LinearLayout navbarsub = findViewById(R.id.navbarsub);
         LinearLayout homebanner = findViewById(R.id.homebanner);
         ScrollView homecontent = findViewById(R.id.homecontent);
-        ListView horizontalpopularitem = findViewById(R.id.horizontalpopularitem);
+        ListView popularitem = findViewById(R.id.popularitem);
         LinearLayout headerbar = findViewById(R.id.headerbar);
         navbar.setVisibility(View.GONE);
         navbarsub.setVisibility(View.GONE);
+        TextView pagetitle = findViewById(R.id.pagetitle);
+        pagetitle.setText("Home");
 
-        horizontalpopularitem.setOnTouchListener(new View.OnTouchListener() {
+        Button goticketbutton = findViewById(R.id.goticketbutton);
+        goticketbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, ViewTicket.class);
+                startActivity(intent);
+            }
+        });
+
+
+        popularitem.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()) {
@@ -191,26 +206,34 @@ public class Home extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        FrameLayout closenavigation = findViewById(R.id.closenavigation);
         ImageView imagemenu = findViewById(R.id.imagemenu);
+        closenavigation.setVisibility(View.GONE);
+
         imagemenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (navbar.getVisibility() == View.VISIBLE) {
+                if (closenavigation.getVisibility() == View.VISIBLE) {
+                    closenavigation.setVisibility(View.GONE);
                     navbar.setVisibility(View.GONE);
                     navbarsub.setVisibility(View.GONE);
                     homecontent.setAlpha(1f);
                     headerbar.setAlpha(1f);
                 } else {
                     navbar.setVisibility(View.VISIBLE);
+                    closenavigation.setVisibility(View.VISIBLE);
                     homecontent.setAlpha(0.1f);
                     headerbar.setAlpha(0.1f);
                 }
             }
         });
-        homecontent.setOnClickListener(new View.OnClickListener() {
+
+        closenavigation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (navbar.getVisibility() == View.VISIBLE) {
+                if (closenavigation.getVisibility() == View.VISIBLE) {
+                    closenavigation.setVisibility(View.GONE);
                     navbar.setVisibility(View.GONE);
                     navbarsub.setVisibility(View.GONE);
                     homecontent.setAlpha(1f);
@@ -218,10 +241,15 @@ public class Home extends AppCompatActivity {
                 }
             }
         });
+        navbar.setClickable(false);
+        navbar.setFocusable(false);
+        navbar.setFocusableInTouchMode(false);
+
         headerbar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (navbar.getVisibility() == View.VISIBLE) {
+                if (closenavigation.getVisibility() == View.VISIBLE) {
+                    closenavigation.setVisibility(View.GONE);
                     navbar.setVisibility(View.GONE);
                     navbarsub.setVisibility(View.GONE);
                     homecontent.setAlpha(1f);
@@ -248,14 +276,6 @@ public class Home extends AppCompatActivity {
                         navbarsub.setVisibility(View.VISIBLE);
                     }
                     return true;
-                } else if (itemId == R.id.aboutus1) {
-                    Intent intent = new Intent(Home.this, MainAUCU.class);
-                    startActivity(intent);
-                    return true;
-                } else if (itemId == R.id.aboutus2) {
-                    Intent intent = new Intent(Home.this, MainAUCU.class);
-                    startActivity(intent);
-                    return true;
                 } else if (itemId == R.id.ticket) {
                     Intent intent = new Intent(Home.this, ViewTicket.class);
                     startActivity(intent);
@@ -267,6 +287,27 @@ public class Home extends AppCompatActivity {
                 }
 
                 return false;
+            }
+        });
+
+        NavigationView navigationsubshow = findViewById(R.id.navigationsubshow);
+        navigationsubshow.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int itemId = item.getItemId();
+                if (itemId == R.id.aboutus1) {
+                    Intent intent = new Intent(Home.this, MainAUCU.class);
+                    intent.putExtra("flag", "aboutus");
+                    startActivity(intent);
+                    return true;
+                }
+                else if (itemId == R.id.aboutus2) {
+                    Intent intent = new Intent(Home.this, MainAUCU.class);
+                    intent.putExtra("flag", "contactus");
+                    startActivity(intent);
+                    return true;
+                }
+                 return false;
             }
         });
     }

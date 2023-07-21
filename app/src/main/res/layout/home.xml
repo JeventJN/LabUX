@@ -8,17 +8,17 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:elevation="10dp">
         <include
             layout="@layout/navigationheader"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <ScrollView
+    <ScrollView
         android:id="@+id/homecontent"
         android:layout_marginTop="77dp"
         android:layout_width="match_parent"
-        android:layout_height="600dp">
+        android:layout_height="680dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -98,19 +98,19 @@
 
             <FrameLayout
                 android:orientation="vertical"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="40dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="150dp">
                 <LinearLayout
                     android:id="@+id/homebanner"
                     android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:layout_margin="20dp"
+                    android:layout_height="150dp"
+                    android:layout_marginHorizontal="20dp"
                     android:orientation="vertical"/>
                     <androidx.viewpager2.widget.ViewPager2
                         android:id="@+id/viewPager"
                         android:layout_width="match_parent"
-                        android:layout_height="200dp"
+                        android:layout_height="150dp"
                         android:layout_gravity="center_horizontal"/>
 <!--                <com.denzcoskun.imageslider.ImageSlider-->
 <!--                    android:layout_width="match_parent"-->
@@ -127,20 +127,22 @@
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginTop="-50dp">
+                android:layout_height="170dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="20dp">
+
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/homegoticket"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:scaleX="1.2"
                     android:scaleY="1.2"
-                    android:layout_gravity="center"/>
+                    android:src="@drawable/homegoticket" />
                 <Button
                     android:id="@+id/goticketbutton"
                     android:layout_width="100dp"
                     android:layout_height="50dp"
-                    android:layout_marginTop="120dp"
+                    android:layout_marginTop="100dp"
                     android:layout_marginLeft="145dp"
                     android:text="Buy"
                     android:backgroundTint="@drawable/hometicketbutton"/>
@@ -176,7 +178,7 @@
                         android:layout_height="190dp"
                         android:layout_marginLeft="15dp">
                         <ListView
-                            android:id="@+id/horizontalpopularitem"
+                            android:id="@+id/popularitem"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             tools:listitem="@layout/templatelisthome"
