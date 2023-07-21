@@ -124,6 +124,7 @@ public class MainAUCU extends AppCompatActivity {
                 }
             }
         });
+        navbar.setClickable(false);
 
         headerbar.setOnClickListener(new View.OnClickListener() {
             @Override

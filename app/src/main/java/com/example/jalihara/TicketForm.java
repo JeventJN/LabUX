@@ -212,6 +212,7 @@ public class TicketForm extends AppCompatActivity {
                 }
             }
         });
+        navbar.setClickable(false);
 
         headerbar.setOnClickListener(new View.OnClickListener() {
             @Override

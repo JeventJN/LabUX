@@ -97,6 +97,7 @@ public class ViewTicketOther extends AppCompatActivity {
                 }
             }
         });
+        navbar.setClickable(false);
 
         headerbar.setOnClickListener(new View.OnClickListener() {
             @Override

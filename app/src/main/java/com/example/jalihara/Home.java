@@ -241,6 +241,9 @@ public class Home extends AppCompatActivity {
                 }
             }
         });
+        navbar.setClickable(false);
+        navbar.setFocusable(false);
+        navbar.setFocusableInTouchMode(false);
 
         headerbar.setOnClickListener(new View.OnClickListener() {
             @Override
