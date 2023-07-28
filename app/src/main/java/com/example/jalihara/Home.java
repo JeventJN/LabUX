@@ -245,6 +245,7 @@ public class Home extends AppCompatActivity {
         navbar.setFocusable(false);
         navbar.setFocusableInTouchMode(false);
 //usa
+//        test
         headerbar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
