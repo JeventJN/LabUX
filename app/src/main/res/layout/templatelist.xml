@@ -29,7 +29,8 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:background="@color/lightdarkblue">
 
                     <ImageView
                         android:id="@+id/imageticket"
@@ -47,6 +48,7 @@
                     android:layout_height="wrap_content"
                     android:elevation="10dp"
                     android:textColor="@color/white"
+                    android:textStyle="bold"
                     android:textSize="30sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +61,10 @@
                     android:layout_height="wrap_content"
                     android:elevation="10dp"
                     android:textColor="@color/white"
-                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginTop="-1dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.976"
@@ -73,7 +78,10 @@
                     android:layout_height="wrap_content"
                     android:elevation="10dp"
                     android:textColor="@color/white"
-                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginBottom="1dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.023"
