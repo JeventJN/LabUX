@@ -51,7 +51,7 @@ public class Login extends AppCompatActivity {
                     errorPassword.setText("Password cannot be empty");
                     errorPassword.setVisibility(View.VISIBLE);
                     isPasswordValid = false;
-                } else if (password.length() < 8) {
+                } else if (password.length() < 9) {
                     errorPassword.setText("Password length must be more than 8 characters");
                     errorPassword.setVisibility(View.VISIBLE);
                     isPasswordValid = false;
