@@ -27,7 +27,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Welcome to JalIhara!"
-                    android:textSize="30sp"
+                    android:fontFamily="@font/notosansbold"
+                    android:textSize="25sp"
                     android:textColor="@color/white"
                     android:layout_marginTop="20dp"
                     android:paddingLeft="25dp" />
@@ -102,6 +103,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="What is JalIhara?"
+                        android:fontFamily="@font/notosansbold"
+                        android:textColor="@color/black"
                         android:textSize="25sp"
                         android:paddingLeft="10dp" />
 
@@ -109,6 +112,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/description"
+                        android:textColor="@color/black"
                         android:textSize="15sp"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
@@ -117,9 +121,12 @@
 
                 <TableLayout
                     android:layout_width="match_parent"
-                    android:layout_height="220dp"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/border_vision_mission"
-                    android:padding="20dp"
+                    android:paddingTop="25dp"
+
+                    android:paddingRight="20dp"
+                    android:paddingLeft="20dp"
                     android:layout_marginTop="170dp">
 
                     <RelativeLayout>
@@ -128,6 +135,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/OurVision"
                             android:text="Our Vision"
+                            android:fontFamily="@font/notosansbold"
                             android:textSize="25sp"
                             android:textColor="@color/white"
                             android:layout_marginLeft="14dp"
@@ -138,13 +146,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/vision"
+                            android:fontFamily="@font/amiriregular"
                             android:textColor="@color/white"
                             android:textSize="15sp"
                             android:paddingLeft="16dp"
                             android:paddingRight="16dp"
                             android:paddingTop="18dp"
                             android:paddingBottom="16dp"
-                            android:layout_marginTop="18dp"
+                            android:layout_marginTop="26dp"
                             android:justificationMode="inter_word"
                             android:background="@drawable/border_inside_vision_mission" />
                     </RelativeLayout>
@@ -153,10 +162,12 @@
 
                 <TableLayout
                     android:layout_width="match_parent"
-                    android:layout_height="230dp"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/border_vision_mission"
-                    android:padding="20dp"
-                    android:layout_marginTop="335dp">
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingBottom="20dp"
+                    android:layout_marginTop="420dp">
 
                     <RelativeLayout>
                         <TextView
@@ -164,6 +175,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/OurMission"
                             android:text="Our Mission"
+                            android:fontFamily="@font/notosansbold"
                             android:textSize="25sp"
                             android:textColor="@color/white"
                             android:layout_marginLeft="14dp"
@@ -172,15 +184,16 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="200dp"
+                            android:layout_height="wrap_content"
                             android:text="@string/mission"
+                            android:fontFamily="@font/amiriregular"
                             android:textColor="@color/white"
                             android:textSize="15sp"
                             android:paddingLeft="16dp"
                             android:paddingRight="16dp"
                             android:paddingTop="18dp"
                             android:paddingBottom="16dp"
-                            android:layout_marginTop="18dp"
+                            android:layout_marginTop="26dp"
                             android:justificationMode="inter_word"
                             android:background="@drawable/border_inside_vision_mission"/>
                     </RelativeLayout>
@@ -192,12 +205,14 @@
                     android:layout_height="600dp"
                     android:background="@drawable/border_description_founder"
                     android:padding="20dp"
-                    android:layout_marginTop="575dp">
+                    android:layout_marginTop="720dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Our Founder"
+                        android:fontFamily="@font/notosansbold"
+                        android:textColor="@color/black"
                         android:textSize="25sp"
                         android:paddingLeft="10dp"/>
 
@@ -229,6 +244,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Joseph Gonzales"
+                                android:fontFamily="@font/amiriregular"
                                 android:textSize="22sp"/>
 
                             <TextView
@@ -260,6 +276,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Reyes Hernandez"
+                                android:fontFamily="@font/amiriregular"
                                 android:textSize="22sp"/>
 
                             <TextView
@@ -306,6 +323,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Sarah Ferrero"
+                                android:fontFamily="@font/amiriregular"
                                 android:textSize="22sp"/>
 
                             <TextView
@@ -337,6 +355,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Christina Burton"
+                                android:fontFamily="@font/amiriregular"
                                 android:textSize="22sp"/>
                             <TextView
                                 android:layout_width="wrap_content"

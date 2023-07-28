@@ -38,6 +38,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/app_name"
+                android:fontFamily="@font/notosansbold"
                 android:textColor="@color/white"
                 android:textSize="30sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -101,8 +102,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="10dp"
                     android:text="JalIHara"
+                    android:fontFamily="@font/notosansbold"
                     android:textColor="@color/white"
                     android:textSize="20sp" />
 
