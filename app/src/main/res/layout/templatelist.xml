@@ -102,18 +102,21 @@
                     android:layout_marginBottom="5dp"
                     android:foregroundGravity="center"
                     app:cardCornerRadius="30dp">
+
                     <Button
                         android:id="@+id/buttonbuy"
                         android:layout_width="75dp"
                         android:layout_height="35dp"
                         android:layout_gravity="center"
                         android:backgroundTint="@drawable/ticketcathover"
+                        android:fontFamily="@font/notosansregular"
                         android:gravity="center"
+                        android:includeFontPadding="false"
                         android:scaleX="1.5"
                         android:scaleY="1.5"
                         android:text="Buy"
                         android:textColor="@color/black"
-                        android:textSize="10dp"/>
+                        android:textSize="10dp" />
                 </androidx.cardview.widget.CardView>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>

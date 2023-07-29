@@ -48,10 +48,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="18dp"
                     android:layout_marginBottom="18dp"
+                    android:fontFamily="@font/amiriregular"
                     android:justificationMode="inter_word"
                     android:text="@string/informations"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -69,11 +70,13 @@
                     android:layout_marginBottom="18dp">
 
                     <TextView
-                        android:layout_width="284dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/amiribold"
+                        android:includeFontPadding="false"
                         android:text="Our website"
                         android:textColor="@color/white"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -110,6 +113,8 @@
                     <TextView
                         android:layout_width="284dp"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/amiribold"
+                        android:includeFontPadding="false"
                         android:text="Our store"
                         android:textColor="@color/white"
                         android:textSize="20sp" />
@@ -118,7 +123,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:gravity="center"
                         android:paddingLeft="3dp">
 
                         <ImageView
@@ -149,6 +153,8 @@
                     <TextView
                         android:layout_width="284dp"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/amiribold"
+                        android:includeFontPadding="false"
                         android:text="Our social media"
                         android:textColor="@color/white"
                         android:textSize="20sp" />

@@ -29,21 +29,26 @@
                     android:scaleY="1.8"
                     android:src="@drawable/ramayana"/>
             </androidx.cardview.widget.CardView>
+
             <TextView
                 android:id="@+id/popularname"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:text="@string/onlyText"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:elevation="10dp"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="20dp"
+                android:elevation="10dp"
+                android:fontFamily="@font/notosansbold"
+                android:includeFontPadding="false"
+                android:text="@string/onlyText"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
             <TextView
                 android:id="@+id/populardate"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansmedium"
+                android:includeFontPadding="false"
                 android:text="@string/onlyText"
                 android:textSize="20dp"
                 android:textColor="@color/white"
@@ -54,6 +59,8 @@
                 android:id="@+id/popularprice"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansregular"
+                android:includeFontPadding="false"
                 android:text="@string/onlyText"
                 android:textSize="20dp"
                 android:textColor="@color/white"

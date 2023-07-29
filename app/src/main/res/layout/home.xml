@@ -78,19 +78,25 @@
                             android:background="@drawable/homeround"
                             android:orientation="vertical"
                             android:gravity="center">
+
                             <TextView
                                 android:id="@+id/welcomeuser"
                                 android:layout_width="250dp"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/notosansmedium"
+                                android:includeFontPadding="false"
                                 android:textColor="@color/black"
                                 android:textSize="20dp"
                                 android:textStyle="bold" />
+
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:fontFamily="@font/notosansmedium"
+                                android:includeFontPadding="false"
                                 android:text="@string/wish"
-                                android:textColor="@color/black"
-                                android:layout_marginLeft="20dp"/>
+                                android:textColor="@color/black" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
