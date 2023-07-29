@@ -151,6 +151,7 @@
                     android:layout_marginTop="100dp"
                     android:layout_marginLeft="145dp"
                     android:text="Buy"
+                    android:textAllCaps="false"
                     android:backgroundTint="@drawable/hometicketbutton"/>
             </FrameLayout>
 
@@ -168,6 +169,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Popular Tickets"
+                        android:textStyle="bold"
                         android:textColor="@color/white"
                         android:textSize="20dp"
                         android:layout_gravity="center"

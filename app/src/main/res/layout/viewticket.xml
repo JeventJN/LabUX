@@ -89,6 +89,7 @@
                         android:fontFamily="@font/notosansmedium"
                         android:includeFontPadding="false"
                         android:text="@string/art"
+                        android:textAllCaps="false"
                         android:textColor="@color/black"
                         android:textSize="10sp"
                         android:scaleX="1.5"
@@ -112,6 +113,7 @@
                         android:fontFamily="@font/notosansmedium"
                         android:includeFontPadding="false"
                         android:text="@string/music"
+                        android:textAllCaps="false"
                         android:textColor="@color/black"
                         android:textSize="10sp"
                         android:scaleX="1.5"
@@ -134,6 +136,7 @@
                         android:fontFamily="@font/notosansmedium"
                         android:includeFontPadding="false"
                         android:text="@string/anm"
+                        android:textAllCaps="false"
                         android:textColor="@color/black"
                         android:textSize="10sp"
                         android:scaleX="1.5"
@@ -161,6 +164,7 @@
                         android:scaleX="1.5"
                         android:scaleY="1.5"
                         android:text="@string/other"
+                        android:textAllCaps="false"
                         android:textColor="@color/black"
                         android:textSize="10sp" />
                 </androidx.cardview.widget.CardView>

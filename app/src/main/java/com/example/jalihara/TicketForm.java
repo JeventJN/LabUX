@@ -64,19 +64,19 @@ public class TicketForm extends AppCompatActivity {
         String passwordLogin = Login.getInstance().getPasswordLogin();
 
         ticketdialogTitle.setText(name);
-        customerPassed.setText("Name          :  " + customerName);
+        customerPassed.setText("Name           :  " + customerName);
         quantityPassed.setText("Quantity      :  " + quantity);
-        boothPassed.setText("Seat Type   :  " + boothstring);
+        boothPassed.setText("Seat type     :  " + boothstring);
 
         if (boothstring.equals("VIP")){
             Double price2 = price * 2 * quantityCount;
             String convertprice2 = new Double(price2).toString();
-            totalprice.setText("Total Price  : IDR" + convertprice2);
+            totalprice.setText("Total Price   : IDR " + String.format("%.0f", price2));
         }
         else{
             Double price2 = price * quantityCount;
             String convertprice2 = new Double(price2).toString();
-            totalprice.setText("Total Price  :  IDR" + convertprice2);
+            totalprice.setText("Total Price   :  IDR " + String.format("%.0f", price2));
         }
         pricedetailed.setText("VIP=2*Regular");
 
@@ -161,7 +161,7 @@ public class TicketForm extends AppCompatActivity {
         int image = intent.getIntExtra("passimage", 0);
         String convertprice = new Double(price).toString();
         binding.passedname.setText(name);
-        binding.passedprice.setText("IDR" + convertprice);
+        binding.passedprice.setText("IDR" + String.format("%.0f", price));
         binding.passedimage.setImageResource(image);
 
 

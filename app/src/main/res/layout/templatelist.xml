@@ -115,6 +115,7 @@
                         android:scaleX="1.5"
                         android:scaleY="1.5"
                         android:text="Buy"
+                        android:textAllCaps="false"
                         android:textColor="@color/black"
                         android:textSize="10dp" />
                 </androidx.cardview.widget.CardView>

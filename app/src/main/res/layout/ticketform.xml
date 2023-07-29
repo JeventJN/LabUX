@@ -115,13 +115,16 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:src="@drawable/username"
-                            android:layout_gravity="center"/>
+                            android:layout_gravity="center"
+                            android:scaleX="0.8"
+                            android:scaleY="0.8"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="240dp"
                         android:layout_height="50dp"
                         android:background="@drawable/formticketborder">
                         <EditText
+                            android:layout_marginHorizontal="5dp"
                             android:id="@+id/customer"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -145,11 +148,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:hint="@string/showerror"
+                        android:textStyle="bold"
                         android:textColor="@color/errormessage"/>
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center">
@@ -168,13 +172,16 @@
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:src="@drawable/ticket"
-                            android:layout_gravity="center"/>
+                            android:layout_gravity="center"
+                            android:scaleX="0.8"
+                            android:scaleY="0.8"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="240dp"
                         android:layout_height="50dp"
                         android:background="@drawable/formticketborder">
                         <EditText
+                            android:layout_marginHorizontal="5dp"
                             android:id="@+id/quantity"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -198,13 +205,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:hint="@string/showerror"
+                        android:textStyle="bold"
                         android:textColor="@color/errormessage"/>
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:orientation="vertical">
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -233,14 +241,14 @@
                             android:layout_height="50dp"
                             android:background="@drawable/formticketborder"
                             android:backgroundTint="@color/lightdarkblue">
-
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="50dp"
                                 android:fontFamily="@font/notosansregular"
                                 android:gravity="center"
                                 android:includeFontPadding="false"
-                                android:text="Booth Type"
+                                android:text="Booth type"
+                                android:textAllCaps="false"
                                 android:textColor="@color/white"
                                 android:textSize="20sp" />
                         </LinearLayout>
@@ -315,10 +323,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center">
                 <LinearLayout
-                    android:layout_width="50dp"
-                    android:layout_height="20dp">
-                </LinearLayout>
-                <LinearLayout
+                    android:layout_marginLeft="50dp"
                     android:layout_width="240dp"
                     android:layout_height="20dp">
 
@@ -328,21 +333,38 @@
                         android:layout_height="match_parent"
                         android:fontFamily="@font/amiriregular"
                         android:hint="@string/showerror"
+                        android:textStyle="bold"
                         android:includeFontPadding="false"
                         android:textColor="@color/errormessage" />
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center">
-                <Button
-                    android:id="@+id/buttonbuy"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
-                    android:gravity="center"
-                    android:text="Buy"
-                    android:backgroundTint="@drawable/buttonlogin"/>
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:foregroundGravity="center">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
+                    android:foregroundGravity="center"
+                    app:cardCornerRadius="10dp">
+                    <Button
+                        android:id="@+id/buttonbuy"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:text="Buy"
+                        android:textSize="10dp"
+                        android:textAllCaps="false"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:foregroundGravity="center"
+                        android:backgroundTint="@drawable/buttonlogin"
+                        android:scaleY="1.5"
+                        android:scaleX="1.5"/>
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
         </LinearLayout>
     </FrameLayout>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">JalIHara</string>
+    <string name="app_name">JalIhara</string>
     <string name="button">This is button</string>
     <string name="onlyImage">This is just image</string>
     <string name="onlyTextInput">This is just text input</string>
@@ -28,7 +28,7 @@
     <string name="tickettitle">Get Your Ticket</string>
     <string name="art">Art</string>
     <string name="music">Music</string>
-    <string name="anm">A$M</string>
+    <string name="anm">A&amp;M</string>
     <string name="other">Other</string>
 
     <!--TicketForm String-->
@@ -40,6 +40,7 @@
     <string name="quantityerror1">Quantity must be filled</string>
     <string name="quantityerror2">Quantity must be more than 0</string>
     <string name="quantityerror3">Please enter a valid input</string>
+    <string name="passcheck">Please enter your password</string>
 
     <!--About Us Contact Us String-->
     <string name="hello_blank_fragment">Hello blank fragment</string>
