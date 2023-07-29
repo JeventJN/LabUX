@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainAUCU"
     android:orientation="vertical"
-    android:id="@+id/direction"
-    android:background="@color/lightdarkblue">
+    android:id="@+id/direction">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/aboutusheader"
