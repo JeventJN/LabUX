@@ -16,13 +16,16 @@
             android:layout_marginTop="20dp"
             android:layout_marginHorizontal="20dp"
             android:gravity="center_vertical">
+
             <TextView
                 android:id="@+id/ticketdialogTitle"
                 android:layout_width="210dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansbold"
+                android:includeFontPadding="false"
                 android:text="Hamlet"
-                android:textSize="30sp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:textSize="30sp" />
             <ImageView
                 android:id="@+id/closedialog"
                 android:layout_width="30dp"
@@ -37,13 +40,16 @@
             android:layout_marginTop="10dp"
             android:layout_marginHorizontal="20dp"
             android:gravity="center_vertical">
+
             <TextView
                 android:id="@+id/customerPassed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansmedium"
+                android:includeFontPadding="false"
                 android:text="Hamlet"
-                android:textSize="15sp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:textSize="15sp" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -52,13 +58,16 @@
             android:layout_marginTop="10dp"
             android:layout_marginHorizontal="20dp"
             android:gravity="center_vertical">
+
             <TextView
                 android:id="@+id/quantityPassed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansmedium"
+                android:includeFontPadding="false"
                 android:text="Hamlet"
-                android:textSize="15sp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:textSize="15sp" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -67,13 +76,16 @@
             android:layout_marginTop="10dp"
             android:layout_marginHorizontal="20dp"
             android:gravity="center_vertical">
+
             <TextView
                 android:id="@+id/boothPassed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansmedium"
+                android:includeFontPadding="false"
                 android:text="Hamlet"
-                android:textSize="15sp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:textSize="15sp" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -82,13 +94,16 @@
             android:layout_marginTop="10dp"
             android:layout_marginHorizontal="20dp"
             android:gravity="center_vertical">
+
             <TextView
                 android:id="@+id/totalprice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansmedium"
+                android:includeFontPadding="false"
                 android:text="Hamlet"
-                android:textSize="15sp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:textSize="15sp" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -96,13 +111,16 @@
             android:orientation="horizontal"
             android:layout_marginHorizontal="20dp"
             android:gravity="center_vertical">
+
             <TextView
                 android:id="@+id/pricedetailed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansregular"
+                android:includeFontPadding="false"
                 android:text="Hamlet"
-                android:textSize="10sp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:textSize="10sp" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -155,13 +173,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center">
+
             <TextView
                 android:id="@+id/confirmpassworderror"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/amiriregular"
+                android:includeFontPadding="false"
                 android:text="@string/error_message"
                 android:textColor="@color/errormessage"
-                android:textSize="13dp"/>
+                android:textSize="13dp" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -169,26 +190,32 @@
             android:orientation="horizontal"
             android:layout_marginTop="30dp"
             android:gravity="end">
+
             <TextView
                 android:id="@+id/dailogcancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="CANCEL"
-                android:textStyle="bold"
-                android:textSize="15sp"
                 android:layout_marginVertical="5dp"
                 android:layout_marginRight="20dp"
-                android:textColor="@color/white"/>
+                android:fontFamily="@font/robotobold"
+                android:includeFontPadding="false"
+                android:text="CANCEL"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/dailogpurchase"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PURCHASE"
-                android:textStyle="bold"
-                android:textSize="15sp"
                 android:layout_marginVertical="5dp"
                 android:layout_marginRight="20dp"
-                android:textColor="@color/white"/>
+                android:fontFamily="@font/robotobold"
+                android:includeFontPadding="false"
+                android:text="PURCHASE"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 

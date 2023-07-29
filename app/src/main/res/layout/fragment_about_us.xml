@@ -250,7 +250,8 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Founder &amp; Executive Director"/>
+                                android:text="Founder &amp; Executive Director"
+                                android:textStyle="bold" />
 
                         </LinearLayout>
 
@@ -282,7 +283,8 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Co-Founder &amp; Managin Director"/>
+                                android:text="Co-Founder &amp; Managin Director"
+                                android:textStyle="bold" />
 
                         </LinearLayout>
 
@@ -329,7 +331,8 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Executive Manager"/>
+                                android:text="Executive Manager"
+                                android:textStyle="bold" />
 
                         </LinearLayout>
 
@@ -357,10 +360,12 @@
                                 android:text="Christina Burton"
                                 android:fontFamily="@font/amiriregular"
                                 android:textSize="22sp"/>
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Chief Technology Officer"/>
+                                android:text="Chief Technology Officer"
+                                android:textStyle="bold" />
 
                         </LinearLayout>
 
