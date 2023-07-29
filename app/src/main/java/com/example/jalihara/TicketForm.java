@@ -71,12 +71,12 @@ public class TicketForm extends AppCompatActivity {
         if (boothstring.equals("VIP")){
             Double price2 = price * 2 * quantityCount;
             String convertprice2 = new Double(price2).toString();
-            totalprice.setText("Total Price  :  Rp" + convertprice2);
+            totalprice.setText("Total Price  : IDR" + convertprice2);
         }
         else{
             Double price2 = price * quantityCount;
             String convertprice2 = new Double(price2).toString();
-            totalprice.setText("Total Price  :  Rp" + convertprice2);
+            totalprice.setText("Total Price  :  IDR" + convertprice2);
         }
         pricedetailed.setText("VIP=2*Regular");
 
@@ -161,7 +161,7 @@ public class TicketForm extends AppCompatActivity {
         int image = intent.getIntExtra("passimage", 0);
         String convertprice = new Double(price).toString();
         binding.passedname.setText(name);
-        binding.passedprice.setText("Rp" + convertprice);
+        binding.passedprice.setText("IDR" + convertprice);
         binding.passedimage.setImageResource(image);
 
 
