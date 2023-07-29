@@ -28,7 +28,7 @@ public class ListAdapterPopular extends ArrayAdapter<ListTicket> {
         ImageView listImage = view.findViewById(R.id.popularimage);
         listName.setText(listData.name);
         listDate.setText(listData.time);
-        listPrice.setText("Rp" + String.valueOf(listData.price));
+        listPrice.setText("IDR" + String.valueOf(listData.price));
         listImage.setImageResource(listData.image);;
         return view;
     }
