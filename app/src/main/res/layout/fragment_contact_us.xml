@@ -63,11 +63,10 @@
                 android:gravity="center">
 
                 <LinearLayout
-                    android:layout_width="304dp"
+                    android:layout_width="305dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:background="@drawable/garisatasbawah"
-                    android:layout_marginBottom="18dp">
+                    android:layout_marginBottom="28dp">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -75,6 +74,7 @@
                         android:fontFamily="@font/amiribold"
                         android:includeFontPadding="false"
                         android:text="Our website"
+                        android:background="@drawable/garisatasbawah"
                         android:textColor="@color/white"
                         android:textSize="20sp"/>
 
@@ -83,7 +83,10 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center"
-                        android:paddingLeft="3dp">
+                        android:background="@drawable/garisbawah"
+                        android:paddingLeft="3dp"
+                        android:paddingTop="19dp"
+                        android:paddingBottom="19dp">
 
                         <ImageView
                             android:layout_width="30dp"
@@ -104,18 +107,18 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="304dp"
+                    android:layout_width="305dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:background="@drawable/garisatasbawah"
-                    android:layout_marginBottom="18dp">
+                    android:layout_marginBottom="28dp">
 
                     <TextView
-                        android:layout_width="284dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/amiribold"
                         android:includeFontPadding="false"
                         android:text="Our store"
+                        android:background="@drawable/garisatasbawah"
                         android:textColor="@color/white"
                         android:textSize="20sp" />
 
@@ -123,7 +126,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:paddingLeft="3dp">
+                        android:background="@drawable/garisbawah"
+                        android:paddingLeft="3dp"
+                        android:paddingTop="19dp"
+                        android:paddingBottom="19dp">
 
                         <ImageView
                             android:layout_width="30dp"
@@ -144,18 +150,18 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="304dp"
+                    android:layout_width="305dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:background="@drawable/garisatasbawah"
-                    android:layout_marginBottom="18dp">
+                    android:layout_marginBottom="28dp">
 
                     <TextView
-                        android:layout_width="284dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/amiribold"
                         android:includeFontPadding="false"
                         android:text="Our social media"
+                        android:background="@drawable/garisatasbawah"
                         android:textColor="@color/white"
                         android:textSize="20sp" />
 
@@ -164,7 +170,9 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center"
-                        android:paddingLeft="3dp">
+                        android:paddingLeft="3dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="6dp">
 
                         <ImageView
                             android:layout_width="30dp"
@@ -187,7 +195,10 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center"
-                        android:paddingLeft="3dp">
+                        android:paddingLeft="3dp"
+                        android:paddingTop="6dp"
+                        android:paddingBottom="10dp"
+                        android:background="@drawable/garisbawah">
 
                         <ImageView
                             android:layout_width="30dp"
@@ -201,8 +212,7 @@
                             android:paddingLeft="5dp"
                             android:text="JalIharatix.id"
                             android:textColor="@color/white"
-                            android:textSize="15sp" />
-
+                            android:textSize="15sp"/>
                     </LinearLayout>
                 </LinearLayout>
 

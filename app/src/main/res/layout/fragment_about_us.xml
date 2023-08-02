@@ -228,7 +228,7 @@
                         <ImageView
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            android:src="@drawable/_joseph"
+                            android:src="@drawable/cah"
                             android:background="@drawable/border_radius_founder"
                             android:clipToOutline="true"
                             />
@@ -243,14 +243,14 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Joseph Gonzales"
+                                android:text="Cecilia Audrey"
                                 android:fontFamily="@font/amiriregular"
                                 android:textSize="22sp"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Founder &amp; Executive Director"
+                                android:text="2502040461"
                                 android:textStyle="bold" />
 
                         </LinearLayout>
@@ -276,14 +276,14 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Reyes Hernandez"
+                                android:text="Frenrico Chang"
                                 android:fontFamily="@font/amiriregular"
                                 android:textSize="22sp"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Co-Founder &amp; Managin Director"
+                                android:text="2502041174"
                                 android:textStyle="bold" />
 
                         </LinearLayout>
@@ -291,7 +291,7 @@
                         <ImageView
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            android:src="@drawable/_reyes"
+                            android:src="@drawable/fc"
                             android:background="@drawable/border_radius_founder"
                             android:clipToOutline="true" />
 
@@ -309,7 +309,7 @@
                         <ImageView
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            android:src="@drawable/_sarah"
+                            android:src="@drawable/jn"
                             android:background="@drawable/border_radius_founder"
                             android:clipToOutline="true"
                             />
@@ -324,14 +324,14 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Sarah Ferrero"
+                                android:text="Jevent Natthannael"
                                 android:fontFamily="@font/amiriregular"
                                 android:textSize="22sp"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Executive Manager"
+                                android:text="2502041256"
                                 android:textStyle="bold" />
 
                         </LinearLayout>
@@ -357,14 +357,14 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Christina Burton"
+                                android:text="Vanessa Kwan"
                                 android:fontFamily="@font/amiriregular"
                                 android:textSize="22sp"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Chief Technology Officer"
+                                android:text="2502041331"
                                 android:textStyle="bold" />
 
                         </LinearLayout>
@@ -372,7 +372,7 @@
                         <ImageView
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            android:src="@drawable/_christina"
+                            android:src="@drawable/vk"
                             android:background="@drawable/border_radius_founder"
                             android:clipToOutline="true" />
 
