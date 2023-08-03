@@ -37,11 +37,11 @@
                     android:textSize="30sp" />
 
                 <ImageView
-                    android:layout_width="295dp"
-                    android:layout_height="196dp"
+                    android:layout_width="251dp"
+                    android:layout_height="190dp"
                     android:background="@drawable/border_radius_group"
                     android:clipToOutline="true"
-                    android:src="@drawable/group" />
+                    android:src="@drawable/group2" />
 
                 <TextView
                     android:layout_width="304dp"
